@@ -1,0 +1,39 @@
+{
+  "name": "barnowl",
+  "homepage": "https://github.com/reelyactive/barnowl/",
+  "author": {
+    "name": "reelyActive",
+    "email": "webdev@reelyactive.com"
+  },
+  "description": "BarnOwl is an all-in-one module that processes reelyActive radio sensor reel data streams and emits detected events.  We believe in an open Internet of Things.",
+  "keywords": [
+    "reelyActive",
+    "RFID",
+    "IoT",
+    "visibility",
+    "packet",
+    "UDP",
+    "serial"
+  ],
+  "version": "0.2.1",
+  "engines": {
+    "node": "0.10.0 || 0.8.x"
+  },
+  "main": "./lib/barnowl.js",
+  "bin": {
+    "barnowl": "./bin/barnowl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reelyactive/barnowl.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-mocha-test": "~0.2.2",
+    "should": "~1.2.2",
+    "node-inspector": "~0.2.0beta4",
+    "grunt-exec": "~0.4.0"
+  }
+}
