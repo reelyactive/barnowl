@@ -4,7 +4,7 @@ barnowl
 What's in a name?
 -----------------
 
-barnowl listens for [reelyActive radio sensor reel packets](http://reelyactive.com/corporate/technology.htm), processes the data stream and emits detected events.  Why the name?  The Barn Owl has the best hearing of any animal tested.
+barnowl listens for [reelyActive radio sensor reel packets](http://context.reelyactive.com/technology.html), processes the data stream and emits detected events.  In other words, it is a middleware package that identifies and locates all the advertising wireless devices within a [Smart Space](http://context.reelyactive.com).  Why the name?  The Barn Owl has the best hearing of any animal tested.
 
 Prerequisite hardware
 ---------------------
@@ -26,7 +26,7 @@ var barnOwlInstance = new barnOwl();
 Then you'll tell it where to listen.  Serial connections (such as USB or UART) as well as UDP are currently supported.  It's okay to listen to multiple sources simultaneously:
 
 ```javascript
-barnOwlInstance.bind('serial', '/dev/ttyUSB0');
+barnOwlInstance.bind('serial', '/dev/ttyUSB0');     // Read Notes section!
 barnOwlInstance.bind('udp', '192.168.1.101:50000');
 ```
 
@@ -64,6 +64,35 @@ This JSON represents a visibility event, in other words a device has sent a radi
 2.  Timestamp of reception of the transmission.  [ISO8601 format](http://en.wikipedia.org/wiki/ISO_8601).
 3.  Radio Decodings of the transmission.  This is an array of reelyActive reelceivers which decoded the transmission, ordered by their received signal strength (RSSI).  reelyActive devices use EUI-64 identifiers.
 
+
+Supported Identifiers
+---------------------
+
+__Bluetooth Smart__
+
+All Bluetooth Smart advertising packets are supported, and these use the 48-bit advertiser address as an identifier.  Both the header and data are provided in raw format at this time.
+
+    {
+      "identifier": {
+       "type": "ADVA-48",
+       "value": "123456789abc",
+       "advHeader": "021e",
+       "advData": "0201050c097265656c7941637469766507ff123456789abc"
+      }
+    }
+
+__reelyActive__
+
+All reelyActive devices use a globally unique EUI-64 identifier.
+
+    {
+      "identifier": {
+       "type": "EUI-64",
+       "value": "001bc50940100000"
+      }
+    }
+
+
 Notes
 -----
 
@@ -79,4 +108,4 @@ var barnOwlInstance = new barnOwl(3);
 What's next?
 ------------
 
-This is an active work in progress.  We'll be adding features and making improvements regularly.
+This is an active work in progress.  We'll be adding features and making improvements regularly.  Bluetooth Smart is at the top of our list.

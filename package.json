@@ -5,9 +5,10 @@
     "name": "reelyActive",
     "email": "webdev@reelyactive.com"
   },
-  "description": "BarnOwl is an all-in-one module that processes reelyActive radio sensor reel data streams and emits detected events.  We believe in an open Internet of Things.",
+  "description": "Identify and locate wireless devices within a Smart Space with barnowl, a middleware package for reelyActive radio sensor infrastructure.  We believe in an open Internet of Things.",
   "keywords": [
     "reelyActive",
+    "Bluetooth Smart",
     "RFID",
     "IoT",
     "visibility",
@@ -15,7 +16,7 @@
     "UDP",
     "serial"
   ],
-  "version": "0.2.1",
+  "version": "0.2.3",
   "engines": {
     "node": "0.10.0 || 0.8.x"
   },
