@@ -1,6 +1,6 @@
 {
   "name": "barnowl",
-  "homepage": "https://github.com/reelyactive/barnowl/",
+  "homepage": "http://reelyactive.com",
   "author": {
     "name": "reelyActive",
     "email": "webdev@reelyactive.com"
@@ -16,9 +16,9 @@
     "UDP",
     "serial"
   ],
-  "version": "0.2.3",
+  "version": "0.3.0",
   "engines": {
-    "node": "0.10.0 || 0.8.x"
+    "node": "0.10.x || 0.8.x"
   },
   "main": "./lib/barnowl.js",
   "bin": {
@@ -36,5 +36,10 @@
     "should": "~1.2.2",
     "node-inspector": "~0.2.0beta4",
     "grunt-exec": "~0.4.0"
-  }
+  },
+  "contributors": [
+    { "name": "Jeffrey Dungen" },
+    { "name": "Pier-Olivier Genest" }
+  ],
+  "license": "MIT"
 }
