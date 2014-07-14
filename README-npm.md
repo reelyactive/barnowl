@@ -100,11 +100,15 @@ All reelyActive devices use a globally unique EUI-64 identifier.
 Where to listen?
 ----------------
 
+__UDP__
+
 Listening for UDP packets requires binding barnowl to an IP address and port on the __local__ machine.  For example if the machine running barnowl has an Ethernet interface with IP address 192.168.1.101, and hardware packets are being sent to that interface on port 50000, then barnowl should listen on that IP address and port as follows:
 
 ```javascript
 barnOwlInstance.bind('udp', '192.168.1.101:50000');
 ```
+
+__Serial__
 
 Listening on a serial interface requires the [serialport](https://github.com/voodootikigod/node-serialport) package.  This is NOT included as a dependency since it may not be trivial to install depending on the hardware and operating system.  Ensure that [serialport](https://github.com/voodootikigod/node-serialport) is installed before you bind barnowl to a serial interface!  Specify the serial interface to listen on as follows:
 
@@ -112,7 +116,15 @@ Listening on a serial interface requires the [serialport](https://github.com/voo
 barnOwlInstance.bind('serial', '/dev/ttyUSB0');     // Typical on Linux
 ```
 
-It is possible to bind barnowl to multiple interfaces (UDP, serial) simultaneously.
+__Events__
+
+Listening to [Node.js Events](http://nodejs.org/api/events.html) requires binding barnowl to an EventEmitter.  Listening to events is a simple means to connect barnowl with alternative data sources.  For instance, you might create an EventEmitter that outputs historical data from a file.  Or you might create an EventEmitter to facilitate integration with hardware like the UART of a [Tessel](https://tessel.io/).
+
+```javascript
+barnOwlInstance.bind('event', eventSource);
+```
+
+It _is_ possible to bind barnowl to multiple interfaces (UDP, serial, event) simultaneously.
 
 
 Notes
