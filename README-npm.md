@@ -127,13 +127,23 @@ barnOwlInstance.bind('event', eventSource);
 It _is_ possible to bind barnowl to multiple interfaces (UDP, serial, event) simultaneously.
 
 
-Notes
------
+Advanced Parameters
+-------------------
 
-It is possible to specify the maximum number of strongest radio decodings to include in visibility events (the default is 1).  For instance, to set this to 3, instantiate barnowl as follows:
+__Maximum Strongest Radio Decodings__
+
+It is possible to specify the maximum number of strongest radio decodings to include in visibility events (the default is 1).  This setting could be used for triangulation.  For instance, to set this to 3, instantiate barnowl as follows:
 
 ```javascript
 var barnOwlInstance = new barnOwl(3);
+```
+
+__Mix Multiple Sources__
+
+It is possible to enable a temporal mixing queue which compensates for the case where multiple sources detect the same radio transmission.  For example, if distinct reels are in such proximity that they detect the same devices, this setting should be enabled.  By default this setting is disabled to reduce the memory and computation footprint of barnowl.  To enable the temporal mixing queue, instantiate barnowl as follows:
+
+```javascript
+var barnOwlInstance = new barnOwl(1, true);
 ```
 
 What's next?
