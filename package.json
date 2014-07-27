@@ -9,6 +9,7 @@
   "keywords": [
     "reelyActive",
     "Bluetooth Smart",
+    "BLE",
     "RFID",
     "IoT",
     "visibility",
@@ -16,7 +17,7 @@
     "UDP",
     "serial"
   ],
-  "version": "0.3.4",
+  "version": "0.3.5",
   "engines": {
     "node": "0.10.x || 0.8.x"
   },

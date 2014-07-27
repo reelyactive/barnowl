@@ -72,16 +72,28 @@ This JSON represents a visibility event, in other words a device has sent a radi
 Supported Identifiers
 ---------------------
 
-__Bluetooth Smart__
+__Bluetooth Smart (BLE)__
 
-All Bluetooth Smart advertising packets are supported, and these use the 48-bit advertiser address as an identifier.  Both the header and data are provided in raw format at this time.
+All Bluetooth Smart (also known as Bluetooth Low Energy) advertising packets are supported, and these use the 48-bit advertiser address as an identifier.  Both the header and data are processed for common fields, however not exhaustively with the current version.
 
     {
       "identifier": {
-       "type": "ADVA-48",
-       "value": "123456789abc",
-       "advHeader": "021e",
-       "advData": "0201050c097265656c7941637469766507ff123456789abc"
+        "type": "ADVA-48",
+        "value": "123456789abc",
+        "advHeader": {
+          "type": "ADV_NONCONNECT_IND",
+          "length": "30",
+          "txAdd": "random",
+          "rxAdd": "public"
+        },
+        "advData": {
+          "flags": [Object],
+          "completeLocalName": "reelyActive",
+          "manufacturerSpecificData": {
+            "companyIdentifierCode": "abcd",
+            "data": "12345678"
+          }
+        }
       }
     }
 
@@ -91,8 +103,13 @@ All reelyActive devices use a globally unique EUI-64 identifier.
 
     {
       "identifier": {
-       "type": "EUI-64",
-       "value": "001bc50940100000"
+        "type": "EUI-64",
+        "value": "001bc50940100000",
+        "flags": { "transmissionCount": 0 },
+        "data": {
+          "battery": "3.00V",
+          "temperature": "20.5C"
+        }
       }
     }
 
