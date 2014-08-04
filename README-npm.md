@@ -2,6 +2,9 @@ barnowl
 =======
 
 
+![barnowl logo](http://reelyactive.com/images/barnowl.jpg)
+
+
 What's in a name?
 -----------------
 
@@ -74,7 +77,7 @@ Supported Identifiers
 
 __Bluetooth Smart (BLE)__
 
-All Bluetooth Smart (also known as Bluetooth Low Energy) advertising packets are supported, and these use the 48-bit advertiser address as an identifier.  Both the header and data are processed for common fields, however not exhaustively with the current version.
+All Bluetooth Smart (also known as Bluetooth Low Energy) advertising packets are supported, and these use the 48-bit advertiser address as an identifier.  Both the header and data are processed for common fields, however not exhaustively with the current version.  The packet below illustrates a selection of these fields (note that it is _not_ a valid BLE packet).
 
     {
       "identifier": {
@@ -87,11 +90,17 @@ All Bluetooth Smart (also known as Bluetooth Low Energy) advertising packets are
           "rxAdd": "public"
         },
         "advData": {
-          "flags": [Object],
+          "flags": ["LE Limited Discoverable Mode","BR/EDR Not Supported"],
           "completeLocalName": "reelyActive",
           "manufacturerSpecificData": {
             "companyIdentifierCode": "abcd",
-            "data": "12345678"
+            "data": "12345678",
+            "iBeacon": {
+              "uuid": "00112233445566778899aabbccddeeff",
+              "major": "0000",
+              "minor": "0000",
+              "txPower": "-59dBm" 
+            }
           }
         }
       }
