@@ -16,7 +16,7 @@ Prerequisite hardware
 
 barnowl requires a source of reelyActive sensor reel packets.  These originate from a reel of reelceivers.  The packet stream may arrive via a local serial connection or encapsulated in UDP packets from a remote source.  reelyActive hardware can be purchased via our [online store](http://shop.reelyactive.com).
 
-__Important: Version 0.3.0 breaks compatibility with hardware produced before May 2014. Version 0.2.3 will continue to serve this previous generation hardware.  Contact us to clarify your situation, if necessary.  Thanks!__
+__Important: Hardware produced before May 2014 is no longer compatible with the current releases (v0.3.0+) but we'll continue to support it through '-legacy' versions. If this is your case, you'll need to explicitly specify the '-legacy' version, for instance: barnowl@0.3.7-legacy. Thanks for your understanding!__
 
 barnowl runs happily on embedded computers such as the BeagleBone Black, as well as your local machine, as well as in the cloud.  And it installs in just one line via npm:
 
