@@ -1,27 +1,3 @@
-barnowl
-=======
-
-
-![barnowl logo](http://reelyactive.com/images/barnowl.jpg)
-
-
-Install via npm (preferred)
----------------------------
-
-    npm install barnowl
-
-Detailed instructions are available on the [barnowl npmjs page](https://www.npmjs.org/package/barnowl).
-
-
-Contributing
-------------
-
-Please [contact us](http://context.reelyactive.com/contact.html) if you're interested in contributing to this or any of our other open source projects.
-
-
-License
--------
-
 MIT License
 
 Copyright (c) 2014 reelyActive
