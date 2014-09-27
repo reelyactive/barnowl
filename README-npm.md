@@ -26,7 +26,7 @@ barnowl runs happily on embedded computers such as the BeagleBone Black, as well
 Less talk, more action!
 -----------------------
 
-Get started in minutes with [barnowl-test](https://github.com/reelyactive/barnowl-test).  Follow the instructions and in four lines you'll be testing out barnowl!  You won't even need any reelyActive hardware.
+Check out [Barnowl Baby Steps](http://reelyactive.github.io/barnowl-baby-steps.html) on our [diyActive page](http://reelyactive.github.io/). Follow the instructions and in a few lines of code you'll be testing out barnowl!
 
 
 Allo Hibou! Show me some code!
