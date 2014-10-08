@@ -16,8 +16,6 @@ Prerequisite hardware
 
 barnowl requires a source of reelyActive sensor reel packets.  These originate from a reel of reelceivers.  The packet stream may arrive via a local serial connection or encapsulated in UDP packets from a remote source.  reelyActive hardware can be purchased via our [online store](http://shop.reelyactive.com).
 
-__Important: Hardware produced before May 2014 is no longer compatible with the current releases (v0.3.0+) but we'll continue to support it through '-legacy' versions. If this is your case, you'll need to explicitly specify the '-legacy' version, for instance: barnowl@0.3.7-legacy. Thanks for your understanding!__
-
 barnowl runs happily on embedded computers such as the BeagleBone Black, as well as your local machine, as well as in the cloud.  And it installs in just one line via npm:
 
     npm install barnowl
@@ -38,7 +36,8 @@ With the prerequisite hardware in place, it's just as easy to get started.  The 
 var barnOwl = require("barnowl");
 var barnOwlInstance = new barnOwl();
 
-barnOwlInstance.bind('udp', '192.168.1.101:50000'); // See "Where to listen?"
+// See "Where to listen?" section
+barnOwlInstance.bind( { protocol: 'udp', path: '192.168.1.101:50000' } ); 
 
 barnOwlInstance.on('visibilityEvent', function(data) {
   var prettyData = JSON.stringify(data, null, " ");
@@ -131,7 +130,7 @@ __UDP__
 Listening for UDP packets requires binding barnowl to an IP address and port on the __local__ machine.  For example if the machine running barnowl has an Ethernet interface with IP address 192.168.1.101, and hardware packets are being sent to that interface on port 50000, then barnowl should listen on that IP address and port as follows:
 
 ```javascript
-barnOwlInstance.bind('udp', '192.168.1.101:50000');
+barnOwlInstance.bind( { protocol: 'udp', path: '192.168.1.101:50000' } );
 ```
 
 __Serial__
@@ -139,7 +138,7 @@ __Serial__
 Listening on a serial interface requires the [serialport](https://github.com/voodootikigod/node-serialport) package.  This is NOT included as a dependency since it may not be trivial to install depending on the hardware and operating system.  Ensure that [serialport](https://github.com/voodootikigod/node-serialport) is installed before you bind barnowl to a serial interface!  Specify the serial interface to listen on as follows:
 
 ```javascript
-barnOwlInstance.bind('serial', '/dev/ttyUSB0');     // Typical on Linux
+barnOwlInstance.bind( { protocol: 'serial', path: '/dev/ttyUSB0' } );
 ```
 
 __Events__
@@ -147,21 +146,35 @@ __Events__
 Listening to [Node.js Events](http://nodejs.org/api/events.html) requires binding barnowl to an EventEmitter.  Listening to events is a simple means to connect barnowl with alternative data sources.  For instance, you might create an EventEmitter that outputs historical data from a file.  Or you might create an EventEmitter to facilitate integration with hardware like the UART of a [Tessel](https://tessel.io/).
 
 ```javascript
-barnOwlInstance.bind('event', eventSource);
+barnOwlInstance.bind( { protocol: 'event', path: eventSource } );
 ```
 
 It _is_ possible to bind barnowl to multiple interfaces (UDP, serial, event) simultaneously.
+
+__Important: When using hardware produced before May 2014, add the following parameter to ensure correct operation. Thanks for your understanding!__
+
+```javascript
+barnOwlInstance.bind( { protocol: 'udp', path: '192.168.1.101:50000', prefix: '' } );
+```
 
 
 Advanced Parameters
 -------------------
 
+The following options are supported when instantiating barnowl (those shown are the defaults):
+
+    {
+      n: 1,
+      enableMixing: false,
+      mixingDelayMilliseconds: 25
+    }
+
 __Maximum Strongest Radio Decodings__
 
-It is possible to specify the maximum number of strongest radio decodings to include in visibility events (the default is 1).  This setting could be used for triangulation.  For instance, to set this to 3, instantiate barnowl as follows:
+It is possible to specify the maximum number of strongest radio decodings to include in visibility events.  This setting could be used for triangulation.  For instance, to set this to 3, instantiate barnowl as follows:
 
 ```javascript
-var barnOwlInstance = new barnOwl(3);
+var barnOwlInstance = new barnOwl( { n: 3 } );
 ```
 
 __Mix Multiple Sources__
@@ -169,8 +182,17 @@ __Mix Multiple Sources__
 It is possible to enable a temporal mixing queue which compensates for the case where multiple sources detect the same radio transmission.  For example, if distinct reels are in such proximity that they detect the same devices, this setting should be enabled.  By default this setting is disabled to reduce the memory and computation footprint of barnowl.  To enable the temporal mixing queue, instantiate barnowl as follows:
 
 ```javascript
-var barnOwlInstance = new barnOwl(1, true);
+var barnOwlInstance = new barnOwl( { enableMixing: true } );
 ```
+
+__Adjust Mixing Delay__
+
+If enableMixing is set to true, the mixing delay specifies the maximum time to wait for additional decodings of the same radio transmission to arrive.  The value can be increased from the default to compensate for long network delays or reduced to minimise latency.  To set the mixing delay to 100 milliseconds, instantiate barnowl as follows:
+
+```javascript
+var barnOwlInstance = new barnOwl( { mixingDelayMilliseconds: 100 } );
+```
+
 
 What's next?
 ------------
