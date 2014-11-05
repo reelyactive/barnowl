@@ -30,14 +30,14 @@ Check out [Barnowl Baby Steps](http://reelyactive.github.io/barnowl-baby-steps.h
 Allo Hibou! Show me some code!
 ------------------------------
 
-With the prerequisite hardware in place, it's just as easy to get started.  The following code is the minimum required to listen to the hardware and output packets to the console:
+Even without any prerequisite hardware in place, it's easy to get started.  The following code will listen to _simulated_ hardware and output packets to the console:
 
 ```javascript
 var barnOwl = require("barnowl");
 var barnOwlInstance = new barnOwl();
 
 // See "Where to listen?" section
-barnOwlInstance.bind( { protocol: 'udp', path: '192.168.1.101:50000' } ); 
+barnOwlInstance.bind( { protocol: 'test', path: 'default' } ); 
 
 barnOwlInstance.on('visibilityEvent', function(data) {
   var prettyData = JSON.stringify(data, null, " ");
@@ -55,7 +55,7 @@ When the above code is run with a valid (and active) serial or UDP data stream a
       "timestamp": "2014-01-01T01:23:45.678Z",
       "radioDecodings": [
        {
-        "rssi": 123,
+        "rssi": 128,
         "identifier": {
          "type": "EUI-64",
          "value": "001bc50940800000"
@@ -149,7 +149,15 @@ Listening to [Node.js Events](http://nodejs.org/api/events.html) requires bindin
 barnOwlInstance.bind( { protocol: 'event', path: eventSource } );
 ```
 
-It _is_ possible to bind barnowl to multiple interfaces (UDP, serial, event) simultaneously.
+__Test__
+
+As of version 0.4.4 there's a built-in _simulated_ hardware packet generator that can be helpful for getting started and debugging.  A reelyActive and a Bluetooth Smart packet will be produced every second, each decoded on two reelceivers with RSSI values in continuous random flux.
+
+```javascript
+barnOwlInstance.bind( { protocol: 'test', path: 'default' } );
+```
+
+It _is_ possible to bind barnowl to multiple interfaces (UDP, serial, event, test) simultaneously.
 
 __Important: When using hardware produced before May 2014, add the following parameter to ensure correct operation. Thanks for your understanding!__
 
