@@ -29,7 +29,10 @@
     "type": "git",
     "url": "https://github.com/reelyactive/barnowl.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "nedb": ">=1.1.1",
+    "reelib": ">=0.0.2"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.4.3",
@@ -40,6 +43,7 @@
   },
   "contributors": [
     { "name": "Jeffrey Dungen" },
+    { "name": "Nicolas Gagne" },
     { "name": "Pier-Olivier Genest" }
   ],
   "license": "MIT"
