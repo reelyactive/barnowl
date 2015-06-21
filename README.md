@@ -188,7 +188,8 @@ The following options are supported when instantiating barnowl (those shown are 
     {
       n: 1,
       enableMixing: false,
-      mixingDelayMilliseconds: 25
+      mixingDelayMilliseconds: 25,
+      minMixingDelayMilliseconds: 5
     }
 
 ### Maximum Strongest Radio Decodings
@@ -213,6 +214,12 @@ If enableMixing is set to true, the mixing delay specifies the maximum time to w
 
 ```javascript
 var middleware = new barnowl( { mixingDelayMilliseconds: 100 } );
+```
+
+A minimum mixing delay can also be specified to fine-tune between real-time and batch processing.  To set the minimum mixing delay to 10 milliseconds, instantiate barnowl as follows:
+
+```javascript
+var middleware = new barnowl( { minMixingDelayMilliseconds: 10 } );
 ```
 
 
