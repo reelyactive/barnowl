@@ -17,9 +17,9 @@
     "UDP",
     "serial"
   ],
-  "version": "0.4.2",
+  "version": "0.4.7",
   "engines": {
-    "node": "0.10.x || 0.8.x"
+    "node": "0.12.x || 0.10.x || 0.8.x"
   },
   "main": "./lib/barnowl.js",
   "bin": {
@@ -29,7 +29,9 @@
     "type": "git",
     "url": "https://github.com/reelyactive/barnowl.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "reelib": ">=0.0.2"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.4.3",
@@ -40,6 +42,7 @@
   },
   "contributors": [
     { "name": "Jeffrey Dungen" },
+    { "name": "Nicolas Gagne" },
     { "name": "Pier-Olivier Genest" }
   ],
   "license": "MIT"
