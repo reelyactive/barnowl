@@ -30,7 +30,6 @@
     "url": "https://github.com/reelyactive/barnowl.git"
   },
   "dependencies": {
-    "nedb": ">=1.1.1",
     "reelib": ">=0.0.2"
   },
   "devDependencies": {
