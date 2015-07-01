@@ -5,7 +5,7 @@
     "name": "reelyActive",
     "email": "webdev@reelyactive.com"
   },
-  "description": "Identify and locate wireless devices within a Smart Space with barnowl, a middleware package for reelyActive radio sensor infrastructure.  We believe in an open Internet of Things.",
+  "description": "Middleware for reelyActive radio sensor infrastructure.  We believe in an open Internet of Things.",
   "keywords": [
     "reelyActive",
     "Bluetooth Smart",
@@ -17,7 +17,7 @@
     "UDP",
     "serial"
   ],
-  "version": "0.4.7",
+  "version": "0.4.9",
   "engines": {
     "node": "0.12.x || 0.10.x || 0.8.x"
   },
