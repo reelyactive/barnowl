@@ -86,9 +86,11 @@ Check out [Barnowl Baby Steps](http://reelyactive.github.io/barnowl-baby-steps.h
 Supported Identifiers
 ---------------------
 
+barnowl supports Bluetooth Smart (BLE) and reelyActive identifiers via [advlib](https://www.npmjs.com/package/advlib), our open source low-power-wireless advertising packet parsing library.
+
 ### Bluetooth Smart (BLE)
 
-All Bluetooth Smart (also known as Bluetooth Low Energy) advertising packets are supported, and these use the 48-bit advertiser address as an identifier.  Both the header and data are processed for common fields, however not exhaustively with the current version.  The packet below illustrates a selection of these fields (note that it is _not_ a valid BLE packet).
+All Bluetooth Smart (also known as Bluetooth Low Energy) advertising packets are supported, and these use the 48-bit advertiser address as an identifier.  All header and data fields are processed to some extent by [advlib](https://www.npmjs.com/package/advlib), which is updated frequently.  The packet below illustrates a selection of these fields (note that it is _not_ a valid BLE packet).
 
     {
       "identifier": {
@@ -119,7 +121,7 @@ All Bluetooth Smart (also known as Bluetooth Low Energy) advertising packets are
 
 ### reelyActive
 
-All reelyActive devices use a globally unique EUI-64 identifier.
+All reelyActive devices use a globally unique EUI-64 identifier and may contain (optional) data.
 
     {
       "identifier": {
@@ -226,7 +228,7 @@ var middleware = new barnowl( { minMixingDelayMilliseconds: 10 } );
 What's next?
 ------------
 
-This is an active work in progress.  Expect regular changes and updates, as well as improved documentation!  If you're developing with chickadee check out:
+This is an active work in progress.  Expect regular changes and updates, as well as improved documentation!  If you're developing with barnowl check out:
 * [diyActive](http://reelyactive.github.io/) our developer page
 * our [node-style-guide](https://github.com/reelyactive/node-style-guide) for development
 * our [contact information](http://context.reelyactive.com/contact.html) to get in touch if you'd like to contribute

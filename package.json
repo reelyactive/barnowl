@@ -17,7 +17,7 @@
     "UDP",
     "serial"
   ],
-  "version": "0.4.9",
+  "version": "0.4.11",
   "engines": {
     "node": "0.12.x || 0.10.x || 0.8.x"
   },
@@ -30,7 +30,8 @@
     "url": "https://github.com/reelyactive/barnowl.git"
   },
   "dependencies": {
-    "reelib": ">=0.0.2"
+    "reelib": ">=0.0.2",
+    "advlib": ">=0.0.7"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
