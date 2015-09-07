@@ -5,7 +5,7 @@ barnowl
 Middleware for reelyActive radio sensor infrastructure
 ------------------------------------------------------
 
-barnowl is a middleware package which interfaces with reelyActive radio sensors, better known as [reelceivers](http://shop.reelyactive.com/collections/infrastructure).  barnowl collects, processes and outputs a real-time stream of radio events.  In simpler terms, barnowl tells you what wireless devices (smartphones, wearables, active RFID tags) are transmitting and which reelceivers are decoding them.
+barnowl is a middleware package which interfaces with reelyActive radio sensors, better known as [reelceivers](http://context.reelyactive.com/technology.html#reelceiver).  barnowl collects, processes and outputs a real-time stream of radio events.  In simpler terms, barnowl tells you what wireless devices (smartphones, wearables, active RFID tags) are transmitting and which reelceivers are decoding them.
 
 ### In the scheme of Things (pun intended)
 
@@ -34,7 +34,7 @@ Installation
 Allo Hibou! Show me some code!
 ------------------------------
 
-Even without any sensor hardware, it's easy to get started.  The following code will listen to _simulated_ hardware and output packets to the console:
+Even without any sensor hardware (which you can [buy here](http://shop.reelyactive.com/collections/starter-kits)), it's easy to get started.  The following code will listen to _simulated_ hardware and output packets to the console:
 
 ```javascript
 var barnowl = require("barnowl");
