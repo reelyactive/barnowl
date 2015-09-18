@@ -190,7 +190,7 @@ The following options are supported when instantiating barnowl (those shown are 
     {
       n: 1,
       enableMixing: false,
-      mixingDelayMilliseconds: 25,
+      mixingDelayMilliseconds: 1000,
       minMixingDelayMilliseconds: 5
     }
 
@@ -212,7 +212,7 @@ var middleware = new barnowl( { enableMixing: true } );
 
 ### Adjust Mixing Delay
 
-If enableMixing is set to true, the mixing delay specifies the maximum time to wait for additional decodings of the same radio transmission to arrive.  The value can be increased from the default to compensate for long network delays or reduced to minimise latency.  To set the mixing delay to 100 milliseconds, instantiate barnowl as follows:
+If enableMixing is set to true, the mixing delay specifies the maximum time to wait for additional decodings of the same radio transmission to arrive.  The value can be increased from the default to compensate for long network delays or reduced to minimise latency.  To reduce the mixing delay to 100 milliseconds, instantiate barnowl as follows:
 
 ```javascript
 var middleware = new barnowl( { mixingDelayMilliseconds: 100 } );
