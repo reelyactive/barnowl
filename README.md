@@ -155,6 +155,15 @@ Listening on a serial interface requires the [serialport](https://github.com/voo
 middleware.bind( { protocol: 'serial', path: '/dev/ttyUSB0' } );
 ```
 
+If you're using the [reelyActive USB Hub](http://shop.reelyactive.com/products/usb-hub) and don't know the exact path, you can instead try:
+
+```javascript
+middleware.bind( { protocol: 'serial', path: 'auto' } );
+```
+
+If successful, the path will be auto-determined and, for future reference, output to the console (along with any alternative paths to try).
+
+
 ### Events
 
 Listening to [Node.js Events](http://nodejs.org/api/events.html) requires binding barnowl to an EventEmitter.  Listening to events is a simple means to connect barnowl with alternative data sources.  For instance, you might create an EventEmitter that outputs historical data from a file.  Or you might create an EventEmitter to facilitate integration with hardware like the UART of a [Tessel](https://tessel.io/).
@@ -239,7 +248,7 @@ License
 
 MIT License
 
-Copyright (c) 2014-2015 reelyActive
+Copyright (c) 2014-2016 reelyActive
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
