@@ -17,7 +17,7 @@
     "UDP",
     "serial"
   ],
-  "version": "0.4.14",
+  "version": "0.4.15",
   "engines": {
     "node": ">=0.10.x"
   },
