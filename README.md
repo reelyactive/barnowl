@@ -164,6 +164,17 @@ middleware.bind( { protocol: 'serial', path: 'auto' } );
 If successful, the path will be auto-determined and, for future reference, output to the console (along with any alternative paths to try).
 
 
+### HCI (Bluetooth)
+
+Listening on a Bluetooth HCI interface requires the [bluetooth-hci-socket](https://www.npmjs.com/package/bluetooth-hci-socket) package.  This is NOT included as a dependency since it may not be trivial to install depending on the hardware and operating system, only a subset of which are supported.  Ensure that [bluetooth-hci-socket](https://www.npmjs.com/package/bluetooth-hci-socket) is installed before you bind barnowl to an HCI interface!  Specify the serial interface to listen on as follows:
+
+```javascript
+middleware.bind( { protocol: 'hci', path: null } );
+```
+
+If successful, the Bluetooth HCI device will enter active scanning mode.  Note that the receiver address is not yet implemented and currently appears as null in the tiraid.
+
+
 ### Events
 
 Listening to [Node.js Events](http://nodejs.org/api/events.html) requires binding barnowl to an EventEmitter.  Listening to events is a simple means to connect barnowl with alternative data sources.  For instance, you might create an EventEmitter that outputs historical data from a file.  Or you might create an EventEmitter to facilitate integration with hardware like the UART of a [Tessel](https://tessel.io/).
