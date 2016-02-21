@@ -172,7 +172,7 @@ Listening on a Bluetooth HCI interface requires the [bluetooth-hci-socket](https
 middleware.bind( { protocol: 'hci', path: null } );
 ```
 
-If successful, the Bluetooth HCI device will enter active scanning mode.  Note that the receiver address is not yet implemented and currently appears as null in the tiraid.
+If successful, the Bluetooth HCI device will enter active scanning mode.  Note that the receiver address will be given as 001bc50940xxxxxx where xxxxxx are the six least significant digits of the device's public MAC address.
 
 
 ### Events
