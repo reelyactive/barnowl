@@ -166,13 +166,15 @@ If successful, the path will be auto-determined and, for future reference, outpu
 
 ### HCI (Bluetooth)
 
-Listening on a Bluetooth HCI interface requires the [bluetooth-hci-socket](https://www.npmjs.com/package/bluetooth-hci-socket) package.  This is NOT included as a dependency since it may not be trivial to install depending on the hardware and operating system, only a subset of which are supported.  Ensure that [bluetooth-hci-socket](https://www.npmjs.com/package/bluetooth-hci-socket) is installed before you bind barnowl to an HCI interface!  Specify the serial interface to listen on as follows:
+Listening on a Bluetooth HCI interface requires the [bluetooth-hci-socket](https://www.npmjs.com/package/bluetooth-hci-socket) package.  This is NOT included as a dependency since it may not be trivial to install depending on the hardware and operating system, only a subset of which are supported (ex: Linux).  Ensure that [bluetooth-hci-socket](https://www.npmjs.com/package/bluetooth-hci-socket) is installed before you bind barnowl to an HCI interface!  Specify the serial interface to listen on as follows:
 
 ```javascript
 middleware.bind( { protocol: 'hci', path: null } );
 ```
 
-If successful, the Bluetooth HCI device will enter active scanning mode.  Note that the receiver address will be given as 001bc50940xxxxxx where xxxxxx are the six least significant digits of the device's public MAC address.
+If successful, the Bluetooth HCI device will enter active scanning mode.  Check the console log to determine the device's public MAC address and how this is interpreted by barnowl, for example:
+
+    HCI Bluetooth address is fee150bada55, query as receiver 001bc50940bada55
 
 
 ### Events
