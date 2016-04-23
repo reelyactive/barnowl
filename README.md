@@ -222,6 +222,7 @@ Sent every 60 seconds by each reelceiver, with all counts relative to that perio
     {
       "type": "reelceiverStatistics",
       "timestamp": "2014-01-01T01:23:45.678Z",
+      "time": 1388539425678,
       "receiverId": "001bc50940810000",
       "uptimeSeconds": 60,
       "sendCount": 1234,
