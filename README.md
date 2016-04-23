@@ -43,9 +43,9 @@ var middleware = new barnowl();
 // See "Where to listen?" section
 middleware.bind( { protocol: 'test', path: 'default' } ); 
 
-middleware.on('visibilityEvent', function(data) {
-  var prettyData = JSON.stringify(data, null, " ");
-  console.log(prettyData);
+middleware.on('visibilityEvent', function(tiraid) {
+  var prettyTiraid = JSON.stringify(tiraid, null, " ");
+  console.log(prettyTiraid);
 });
 ```
 
@@ -202,6 +202,38 @@ __Important: When using hardware produced before May 2014, add the following par
 ```javascript
 middleware.bind( { protocol: 'udp', path: '192.168.1.101:50000', prefix: '' } );
 ```
+
+Infrastructure Events
+---------------------
+
+Listen for sensor hardware (infrastructure) events with the following code:
+
+```javascript
+middleware.on('infrastructureEvent', function(data) {
+  var prettyData = JSON.stringify(data, null, " ");
+  console.log(prettyData);
+});
+```
+
+### reelceiverStatistics
+
+Sent every 60 seconds by each reelceiver, with all counts relative to that period.  Example:
+
+    {
+      "type": "reelceiverStatistics",
+      "timestamp": "2014-01-01T01:23:45.678Z",
+      "time": 1388539425678,
+      "receiverId": "001bc50940810000",
+      "uptimeSeconds": 60,
+      "sendCount": 1234,
+      "crcPass": 1234,
+      "crcFail": 56,
+      "maxRSSI": 190,
+      "avgRSSI": 150,
+      "minRSSI": 135,
+      "temperatureCelcius": 25,
+      "radioVoltage": 3.3
+    }
 
 
 Advanced Parameters
