@@ -4,5 +4,61 @@ var path = require('path');
 var fs = require('fs');
 var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
 
-require(lib + '/main.js');
+var barnowl = require(lib + '/barnowl.js');
+
+var middleware = new barnowl();
+
+var minimist = require('minimist');
+var argv = minimist(process.argv.slice(2));
+
+DEFAULT_PROTOCOL = 'test';
+DEFAULT_PATH = 'default';
+
+if (argv.help) {
+  console.log('-t <protocol>   # see https://github.com/reelyactive/barnowl#where-to-listen');
+  console.log('-p <path>       # the interface to listen - check the above link for more info');
+  console.log('-s              # show statistics events');
+  console.log('-e              # show visibility events');
+  process.exit(0);
+}
+
+var options = {};
+options.protocol = argv.t || DEFAULT_PROTOCOL;
+options.path = argv.p || DEFAULT_PATH;
+
+process.on('uncaughtException', function(err) {
+  if (err.message === 'Cannot find module \'serialport\'') {
+    console.error('ERROR :: Module serialport not installed');
+    console.error('Please run: npm install serialport')
+    process.exit(1);
+  }
+});
+
+if (['serial', 'hci'].indexOf(options.protocol) !== -1) {
+  if (options.protocol === 'serial') {
+    require('serialport');
+
+  }
+  if (options.protocol === 'hci') {
+    require('hci');
+  }
+}
+
+middleware.bind({ protocol: options.protocol, path: options.path });
+
+if (argv.e) {
+  middleware.on('visibilityEvent', function(tiraid) {
+    console.log('Listening visibility events.')
+    var prettyTiraid = JSON.stringify(tiraid, null, " ");
+    console.log(prettyTiraid);
+  });
+}
+
+if (argv.s) {
+  middleware.on('reelEvent', function(data) {
+    console.log('Listening statistics events.')
+    var prettyTiraid = JSON.stringify(data, null, " ");
+    console.log(prettyTiraid);
+  });
+}
 
