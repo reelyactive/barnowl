@@ -203,13 +203,13 @@ __Important: When using hardware produced before May 2014, add the following par
 middleware.bind( { protocol: 'udp', path: '192.168.1.101:50000', prefix: '' } );
 ```
 
-Infrastructure Events
----------------------
+Reel Events
+-----------
 
-Listen for sensor hardware (infrastructure) events with the following code:
+Listen for sensor reel events with the following code:
 
 ```javascript
-middleware.on('infrastructureEvent', function(data) {
+middleware.on('reelEvent', function(data) {
   var prettyData = JSON.stringify(data, null, " ");
   console.log(prettyData);
 });
