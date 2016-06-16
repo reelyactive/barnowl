@@ -32,6 +32,12 @@ process.on('uncaughtException', function(err) {
     console.error('Please run: npm install serialport')
     process.exit(1);
   }
+  if (err.message === 'Cannot find module \'hci\'') {
+    console.error('ERROR :: Module hci not installed');
+    console.error('Please run: npm install hci')
+    process.exit(1);
+  }
+  console.error(err.stack);
 });
 
 if (['serial', 'hci'].indexOf(options.protocol) !== -1) {
@@ -56,7 +62,7 @@ if (argv.e) {
 
 if (argv.s) {
   middleware.on('reelEvent', function(data) {
-    console.log('Listening statistics events.')
+    console.log('Listening reel events.')
     var prettyTiraid = JSON.stringify(data, null, " ");
     console.log(prettyTiraid);
   });
