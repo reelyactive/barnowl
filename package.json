@@ -17,7 +17,7 @@
     "UDP",
     "serial"
   ],
-  "version": "0.4.19",
+  "version": "0.4.20",
   "engines": {
     "node": ">=0.10.x"
   },
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "reelib": ">=0.0.5",
-    "advlib": ">=0.0.12"
+    "advlib": ">=0.0.14"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
