@@ -235,6 +235,18 @@ Sent every 60 seconds by each reelceiver, with all counts relative to that perio
       "radioVoltage": 3.3
     }
 
+### reelceiverConnection
+
+Sent whenever a new reelceiver connection is detected.  Example:
+
+  {
+    "type": "reelceiverConnection",
+    "timestamp": "2014-01-01T01:23:45.678Z",
+    "time": 1388539425678,
+    "receiverId": "001bc50940810000",
+    "origin": "/dev/ttyUSB0"
+  }
+
 
 Advanced Parameters
 -------------------
