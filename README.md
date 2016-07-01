@@ -247,6 +247,17 @@ Sent whenever a new reelceiver connection is detected.  Example:
     "origin": "/dev/ttyUSB0"
   }
 
+### reelceiverDisconnection
+
+Sent whenever a reelceiver is considered disconnected after at least 60 seconds of inactivity based on its packet stream.  Example:
+
+  {
+    "type": "reelceiverDisconnection",
+    "timestamp": "2014-01-01T01:23:45.678Z",
+    "time": 1388539425678,
+    "receiverId": "001bc50940810000"
+  }
+
 ### reelMapState
 
 Sent every 60 seconds to provide a mapping of the reels by origin (see [Where to Listen?](#where-to-listen)) and the reelceivers by reel offset (index of position from end of reel).  Example:
