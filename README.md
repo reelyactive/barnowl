@@ -149,7 +149,7 @@ middleware.bind( { protocol: 'udp', path: '192.168.1.101:50000' } );
 
 ### Serial
 
-Listening on a serial interface requires the [serialport](https://github.com/voodootikigod/node-serialport) package.  This is NOT included as a dependency since it may not be trivial to install depending on the hardware and operating system.  Ensure that [serialport](https://github.com/voodootikigod/node-serialport) is installed before you bind barnowl to a serial interface!  Specify the serial interface to listen on as follows:
+Listening on a serial interface requires the [serialport](https://www.npmjs.com/package/serialport) package.  This is NOT included as a dependency since it may not be trivial to install depending on the hardware and operating system.  Ensure that [serialport](https://www.npmjs.com/package/serialport) is installed before you bind barnowl to a serial interface!  Specify the serial interface to listen on as follows:
 
 ```javascript
 middleware.bind( { protocol: 'serial', path: '/dev/ttyUSB0' } );
@@ -163,6 +163,10 @@ middleware.bind( { protocol: 'serial', path: 'auto' } );
 
 If successful, the path will be auto-determined and, for future reference, output to the console (along with any alternative paths to try).
 
+| barnowl version | serialport version |
+|:---------------:|:------------------:|
+| >=0.4.22        | >=4.0.0            |
+| <=0.4.21        | <=3.x.x            |
 
 ### HCI (Bluetooth)
 
