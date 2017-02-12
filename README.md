@@ -2,17 +2,20 @@ barnowl
 =======
 
 
-Middleware for reelyActive radio sensor infrastructure
+Middleware for low-power wireless radio infrastructure
 ------------------------------------------------------
 
-barnowl is a middleware package which interfaces with reelyActive radio sensors, better known as [reelceivers](http://context.reelyactive.com/technology.html#reelceiver).  barnowl collects, processes and outputs a real-time stream of radio events.  In simpler terms, barnowl tells you what wireless devices (smartphones, wearables, active RFID tags) are transmitting and which reelceivers are decoding them.
+barnowl is a middleware package which interfaces with low-power wireless receivers (ex: Bluetooth Low Energy, Active RFID).  barnowl collects, processes and outputs a real-time stream of radio events: identifiers, payloads and received signal strengths.  In simpler terms, barnowl tells you what wireless devices (smartphones, wearables, active RFID tags) are transmitting and which re(el)ceivers are decoding them.
+
+Effectively barnowl is lightweight, open source middleware for _bring-your-own-device_ real-time location systems (RTLS) and machine to machine (M2M) communications.
+
 
 ### In the scheme of Things (pun intended)
 
-The barnowl, [barnacles](https://www.npmjs.com/package/barnacles), [barterer](https://www.npmjs.com/package/barterer) and [chickadee](https://www.npmjs.com/package/chickadee) packages all work together as a unit, conveniently bundled as [hlc-server](https://www.npmjs.com/package/hlc-server).  Check out our [developer page](http://reelyactive.github.io/) for more resources on reelyActive software and hardware.
+The barnowl, [barnacles](https://www.npmjs.com/package/barnacles), [barterer](https://www.npmjs.com/package/barterer) and [chickadee](https://www.npmjs.com/package/chickadee) packages all work together as a unit, conveniently bundled as [hlc-server](https://www.npmjs.com/package/hlc-server).  Check out our [developer page](https://reelyactive.github.io/) for more resources on reelyActive software and hardware.
 
 
-![barnowl logo](http://reelyactive.com/images/barnowl.jpg)
+![barnowl logo](https://reelyactive.github.io/barnowl/images/barnowl-bubble.png)
 
 
 What's in a name?
@@ -34,7 +37,7 @@ Installation
 Allo Hibou! Show me some code!
 ------------------------------
 
-Even without any sensor hardware (which you can [buy here](http://shop.reelyactive.com/collections/starter-kits)), it's easy to get started.  The following code will listen to _simulated_ hardware and output packets to the console:
+Even without any sensor hardware (which you can [buy here](https://shop.reelyactive.com/collections/starter-kits)), it's easy to get started.  The following code will listen to _simulated_ hardware and output packets to the console:
 
 ```javascript
 var barnowl = require("barnowl");
@@ -78,19 +81,19 @@ This JSON represents a visibility event, in other words a device has sent a radi
 Add hardware to the mix
 -----------------------
 
-barnowl requires a source of reelyActive sensor reel packets.  These originate from a reel of reelceivers.  The packet stream may arrive via a local serial connection or encapsulated in UDP packets from a remote source.  reelyActive hardware can be purchased via our [online store](http://shop.reelyactive.com).
+barnowl requires a source of reelyActive sensor reel packets.  These originate from a reel of reelceivers.  The packet stream may arrive via a local serial connection or encapsulated in UDP packets from a remote source.  reelyActive hardware can be purchased via our [online store](https://shop.reelyactive.com).
 
-Check out [Barnowl Baby Steps](http://reelyactive.github.io/barnowl-baby-steps.html) on our [diyActive page](http://reelyactive.github.io/). Follow the instructions and in a few lines of code you'll be testing out barnowl with live data!
+Check out [Barnowl Baby Steps](https://reelyactive.github.io/barnowl-baby-steps.html) on our [diyActive page](https://reelyactive.github.io/). Follow the instructions and in a few lines of code you'll be testing out barnowl with live data!
 
 
 Supported Identifiers
 ---------------------
 
-barnowl supports Bluetooth Smart (BLE) and reelyActive identifiers via [advlib](https://www.npmjs.com/package/advlib), our open source low-power-wireless advertising packet parsing library.
+barnowl supports Bluetooth Low Energy (BLE) and reelyActive identifiers via [advlib](https://www.npmjs.com/package/advlib), our open source low-power-wireless advertising packet parsing library.
 
-### Bluetooth Smart (BLE)
+### Bluetooth Low Energy (BLE)
 
-All Bluetooth Smart (also known as Bluetooth Low Energy) advertising packets are supported, and these use the 48-bit advertiser address as an identifier.  All header and data fields are processed to some extent by [advlib](https://www.npmjs.com/package/advlib), which is updated frequently.  The packet below illustrates a selection of these fields (note that it is _not_ a valid BLE packet).
+All BLE advertising packets are supported, and these use the 48-bit advertiser address as an identifier.  All header and data fields are processed to some extent by [advlib](https://www.npmjs.com/package/advlib), which is updated frequently.  The packet below illustrates a selection of these fields (note that it is _not_ a valid BLE packet).
 
     {
       "identifier": {
@@ -327,9 +330,9 @@ What's next?
 ------------
 
 This is an active work in progress.  Expect regular changes and updates, as well as improved documentation!  If you're developing with barnowl check out:
-* [diyActive](http://reelyactive.github.io/) our developer page
+* [diyActive](https://reelyactive.github.io/) our developer page
 * our [node-style-guide](https://github.com/reelyactive/node-style-guide) for development
-* our [contact information](http://context.reelyactive.com/contact.html) to get in touch if you'd like to contribute
+* our [contact information](http://www.reelyactive.com/contact/) to get in touch if you'd like to contribute
 
 
 License
@@ -337,7 +340,7 @@ License
 
 MIT License
 
-Copyright (c) 2014-2016 reelyActive
+Copyright (c) 2014-2017 reelyActive
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

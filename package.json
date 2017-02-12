@@ -5,19 +5,18 @@
     "name": "reelyActive",
     "email": "webdev@reelyactive.com"
   },
-  "description": "Middleware for reelyActive radio sensor infrastructure.  We believe in an open Internet of Things.",
+  "description": "Middleware for low-power wireless radio infrastructure.  We believe in an open Internet of Things.",
   "keywords": [
     "reelyActive",
-    "Bluetooth Smart",
+    "Bluetooth Low Energy",
     "BLE",
     "RFID",
     "IoT",
-    "visibility",
-    "packet",
-    "UDP",
-    "serial"
+    "RTLS",
+    "middleware",
+    "M2M"
   ],
-  "version": "0.4.22",
+  "version": "0.4.23",
   "engines": {
     "node": ">=0.10.x"
   },
@@ -31,7 +30,7 @@
   },
   "dependencies": {
     "reelib": ">=0.0.5",
-    "advlib": ">=0.0.16"
+    "advlib": ">=0.0.23"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
