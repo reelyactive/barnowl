@@ -5,7 +5,7 @@ barnowl
 Middleware for low-power wireless radio infrastructure
 ------------------------------------------------------
 
-barnowl is a middleware package which interfaces with low-power wireless receivers (ex: Bluetooth Low Energy, Active RFID).  barnowl collects, processes and outputs a real-time stream of radio events: identifiers, payloads and received signal strengths.  In simpler terms, barnowl tells you what wireless devices (smartphones, wearables, active RFID tags) are transmitting and which reelceivers are decoding them.
+barnowl is a middleware package which interfaces with low-power wireless receivers (ex: Bluetooth Low Energy, Active RFID).  barnowl collects, processes and outputs a real-time stream of radio events: identifiers, payloads and received signal strengths.  In simpler terms, barnowl tells you what wireless devices (smartphones, wearables, active RFID tags) are transmitting and which re(el)ceivers are decoding them.
 
 Effectively barnowl is lightweight, open source middleware for _bring-your-own-device_ real-time location systems (RTLS) and machine to machine (M2M) communications.
 
