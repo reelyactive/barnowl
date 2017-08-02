@@ -16,7 +16,7 @@
     "middleware",
     "M2M"
   ],
-  "version": "0.4.23",
+  "version": "0.4.24",
   "engines": {
     "node": ">=0.10.x"
   },
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "reelib": ">=0.0.5",
-    "advlib": ">=0.0.23"
+    "advlib": ">=0.0.27"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
