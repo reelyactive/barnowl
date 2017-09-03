@@ -267,7 +267,7 @@ Sent whenever a reelceiver is considered disconnected after at least 60 seconds 
 
 ### reelMapState
 
-Sent every 60 seconds to provide a mapping of the reels by origin (see [Where to Listen?](#where-to-listen)) and the reelceivers by reel offset (index of position from end of reel).  Example:
+Sent every 60 seconds, and following a reelceiverConnection, to provide a mapping of the reels by origin (see [Where to Listen?](#where-to-listen)) and the reelceivers by reel offset (index of position from end of reel).  Example:
 
     {
       "type": "reelMapState",
