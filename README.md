@@ -184,6 +184,17 @@ If successful, the Bluetooth HCI device will enter active scanning mode.  Check 
     HCI Bluetooth address is fee150bada55, query as receiver 001bc50940bada55
 
 
+### BlueCats UDP
+
+Listening for UDP packets from a BlueCats Edge Relay requires binding barnowl to an IP address and port on the __local__ machine.  For example if the machine running barnowl has an Ethernet interface with IP address 192.168.1.101, and hardware packets are being sent to that interface on port 9942, then barnowl should listen on that IP address and port as follows:
+
+```javascript
+middleware.bind( { protocol: 'bluecats-udp', path: '192.168.1.101:9942' } );
+```
+
+See our [Configure a BlueCats Edge Relay](https://reelyactive.github.io/configure-a-bluecats-edgerelay.html) tutorial for all prerequisites.
+
+
 ### Events
 
 Listening to [Node.js Events](http://nodejs.org/api/events.html) requires binding barnowl to an EventEmitter.  Listening to events is a simple means to connect barnowl with alternative data sources.  For instance, you might create an EventEmitter that outputs historical data from a file.  Or you might create an EventEmitter to facilitate integration with hardware like the UART of a [Tessel](https://tessel.io/).
