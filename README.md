@@ -186,10 +186,11 @@ If successful, the Bluetooth HCI device will enter active scanning mode.  Check 
 
 ### BlueCats UDP
 
-Listening for UDP packets from a BlueCats Edge Relay requires binding barnowl to an IP address and port on the __local__ machine.  For example if the machine running barnowl has an Ethernet interface with IP address 192.168.1.101, and hardware packets are being sent to that interface on port 50000, then barnowl should listen on that IP address and port as follows:
+Listening for UDP packets from a BlueCats Edge Relay requires binding barnowl to an IP address and port on the __local__ machine.  For example if the machine running barnowl has an Ethernet interface with IP address 192.168.1.101, and hardware packets are being sent to that interface on port 9942, then barnowl should listen on that IP address and port as follows:
 
 ```javascript
-middleware.bind( { protocol: 'bluecats-udp', path: '192.168.1.101:50000' } );
+middleware.bind( { protocol: 'bluecats-udp', path: '192.168.1.101:9942' } );
+```
 
 See our [Configure a BlueCats Edge Relay](https://reelyactive.github.io/configure-a-bluecats-edgerelay.html) tutorial for all prerequisites.
 
