@@ -40,15 +40,15 @@ Allo Hibou! Show me some code!
 Even without any sensor hardware (which you can [buy here](https://shop.reelyactive.com/collections/starter-kits)), it's easy to get started.  The following code will listen to _simulated_ hardware and output packets to the console:
 
 ```javascript
-const barnowl = require('barnowl');
+const Barnowl = require('barnowl');
 
-let middleware = new barnowl({ enableMixing: true });
+let middleware = new Barnowl({ enableMixing: true });
 
 middleware.on("raddec", function(radioDecoding) {
   console.log(radioDecoding);
 });
 
-middleware.addListener(barnowl, { type: "test", radioDecodingPeriod: 500 });
+middleware.addListener(Barnowl, { type: "test", radioDecodingPeriod: 500 });
 ```
 
 
