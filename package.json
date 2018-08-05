@@ -1,0 +1,38 @@
+{
+  "name": "barnowl",
+  "homepage": "https://www.reelyactive.com",
+  "author": {
+    "name": "reelyActive",
+    "email": "info@reelyactive.com"
+  },
+  "description": "Middleware for low-power wireless radio infrastructure.  We believe in an open Internet of Things.",
+  "keywords": [
+    "reelyActive",
+    "Bluetooth Low Energy",
+    "BLE",
+    "RFID",
+    "IoT",
+    "RTLS",
+    "middleware",
+    "M2M"
+  ],
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "main": "./lib/barnowl.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reelyactive/barnowl.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "contributors": [
+    { "name": "Jeffrey Dungen" },
+    { "name": "Nicolas Gagne" },
+    { "name": "Pier-Olivier Genest" }
+  ],
+  "license": "MIT"
+}

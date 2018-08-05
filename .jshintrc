@@ -1,0 +1,10 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "funcscope": true,
+  "freeze": true,
+  "maxdepth": 3,
+  "maxstatements": 15,
+  "eqnull": true,
+  "node": true
+}
