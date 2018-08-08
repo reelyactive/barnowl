@@ -42,13 +42,13 @@ Even without any sensor hardware (which you can [buy here](https://shop.reelyact
 ```javascript
 const Barnowl = require('barnowl');
 
-let middleware = new Barnowl({ enableMixing: true });
+let barnowl = new Barnowl({ enableMixing: true });
 
-middleware.on("raddec", function(radioDecoding) {
-  console.log(radioDecoding);
+barnowl.on("raddec", function(raddec) {
+  console.log(raddec);
 });
 
-middleware.addListener(Barnowl, { type: "test", radioDecodingPeriod: 500 });
+barnowl.addListener(Barnowl, { type: "test", radioDecodingPeriod: 500 });
 ```
 
 
