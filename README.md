@@ -48,7 +48,7 @@ barnowl.on("raddec", function(raddec) {
   console.log(raddec);
 });
 
-barnowl.addListener(Barnowl, { type: "test", radioDecodingPeriod: 500 });
+barnowl.addListener(Barnowl, {}, Barnowl.TestListener, {});
 ```
 
 
