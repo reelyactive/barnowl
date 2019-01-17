@@ -60,7 +60,7 @@ As output you should see a stream of [raddec](https://github.com/reelyactive/rad
 }
 ```
 
-Regardless of the underlying RF protocol and hardware, the raddec species _what_ (transmitterId) is _where_ (receiverId & rssi), as well as _how_ (packets) and _when_ (timestamp).
+Regardless of the underlying RF protocol and hardware, the [raddec](https://github.com/reelyactive/raddec/) specifies _what_ (transmitterId) is _where_ (receiverId & rssi), as well as _how_ (packets) and _when_ (timestamp).
 
 
 Is that owl you can do?
@@ -76,16 +76,13 @@ Where to listen?
 
 __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) while all other listeners exist as separate software packages to keep the code as lightweight and modular as possible.  The following table lists all these listener packages which integrate seamlessly with __barnowl__ in just two lines of code.
 
-| Listener package | Use with |
-|------------------|----------|
-| [barnowl-reel](https://github.com/reelyactive/barnowl-reel) |
-  reelyActive hardware (BLE, sub-GHz active RFID) |
-| [barnowl-hci](https://github.com/reelyactive/barnowl-hci)   |
-  BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
-| [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) |
-  WiFi radios on computers that can run tcpdump |
+| Listener package                                                  | Use with |
+|-------------------------------------------------------------------|----------|
+| [barnowl-reel](https://github.com/reelyactive/barnowl-reel)       | reelyActive hardware (BLE, sub-GHz active RFID) |
+| [barnowl-hci](https://github.com/reelyactive/barnowl-hci)         | BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
+| [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
 
-For instance, listening for reelyActive hardware connected via a serial port requires just the addition of two lines of code:
+For instance, listening for reelyActive hardware connected via a serial port requires the addition of just two lines of code:
 
 ```javascript
 const Barnowl = require('barnowl');
