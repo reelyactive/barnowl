@@ -23,10 +23,10 @@ Installation
     npm install barnowl
 
 
-Allo Hibou! Show me some code!
-------------------------------
+Hello barnowl!
+--------------
 
-Even without any sensor hardware (which you can [buy here](https://shop.reelyactive.com/collections/starter-kits)), it's easy to get started.  The following code will listen to _simulated_ hardware and output packets to the console:
+Even without any hardware, it's easy to get started.  The following code will listen to _simulated_ hardware and output packets to the console:
 
 ```javascript
 const Barnowl = require('barnowl');
@@ -38,6 +38,67 @@ barnowl.on("raddec", function(raddec) {
 });
 
 barnowl.addListener(Barnowl, {}, Barnowl.TestListener, {});
+```
+
+As output you should see a stream of [raddec](https://github.com/reelyactive/raddec/) objects similar to the following:
+
+```javascript
+{
+  transmitterId: "001122334455",
+  transmitterIdType: 2,
+  rssiSignature:
+   [ { receiverId: "001bc50940810000",
+       receiverIdType: 1,
+       numberOfDecodings: 1,
+       rssi: -60 },
+     { receiverId: "001bc50940810001",
+       receiverIdType: 1,
+       numberOfDecodings: 1,
+       rssi: -66 } ],
+  packets: [ "061b55443322110002010611074449555520657669746341796c656572" ],
+  timestamp: 1547693457133
+}
+```
+
+Regardless of the underlying RF protocol and hardware, the raddec species _what_ (transmitterId) is _where_ (receiverId & rssi), as well as _how_ (packets) and _when_ (timestamp).
+
+
+Is that owl you can do?
+-----------------------
+
+While __barnowl__ may suffice standalone for simple real-time applications, its functionality can be greatly extended with the following software packages:
+- [advlib](https://github.com/reelyactive/advlib) to decode the individual packets from hexadecimal strings into JSON
+- [barnacles](https://github.com/reelyactive/barnacles) to distribute the real-time data stream via APIs and more
+
+
+Where to listen?
+----------------
+
+__barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) while all other listeners exist as separate software packages to keep the code as lightweight and modular as possible.  The following table lists all these listener packages which integrate seamlessly with __barnowl__ in just two lines of code.
+
+| Listener package | Use with |
+|------------------|----------|
+| [barnowl-reel](https://github.com/reelyactive/barnowl-reel) |
+  reelyActive hardware (BLE, sub-GHz active RFID) |
+| [barnowl-hci](https://github.com/reelyactive/barnowl-hci)   |
+  BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
+| [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) |
+  WiFi radios on computers that can run tcpdump |
+
+For instance, listening for reelyActive hardware connected via a serial port requires just the addition of two lines of code:
+
+```javascript
+const Barnowl = require('barnowl');
+const BarnowlReel = require('barnowl-reel'); // 1: Include the listener package
+
+let barnowl = new Barnowl({ enableMixing: true });
+
+barnowl.on("raddec", function(raddec) {
+  console.log(raddec);
+});
+
+// 2: Add the specific listener with relevant options
+barnowl.addListener(BarnowlReel, {}, BarnowlReel.SerialListener, { path: "auto" });
 ```
 
 
