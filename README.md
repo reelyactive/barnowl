@@ -31,7 +31,7 @@ Even without any hardware, it's easy to get started.  The following code will li
 ```javascript
 const Barnowl = require('barnowl');
 
-let barnowl = new Barnowl({ enableMixing: true });
+let barnowl = new Barnowl();
 
 barnowl.on("raddec", function(raddec) {
   console.log(raddec);
@@ -82,21 +82,82 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) whi
 | [barnowl-hci](https://github.com/reelyactive/barnowl-hci)         | BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
 | [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
 
-For instance, listening for reelyActive hardware connected via a serial port requires the addition of just two lines of code:
+### Example: reelyActive hardware connected via serial port
 
 ```javascript
 const Barnowl = require('barnowl');
-const BarnowlReel = require('barnowl-reel'); // 1: Include the listener package
+const BarnowlReel = require('barnowl-reel'); // 1: Include the interface package
 
-let barnowl = new Barnowl({ enableMixing: true });
+let barnowl = new Barnowl();
 
-barnowl.on("raddec", function(raddec) {
-  console.log(raddec);
-});
+barnowl.on("raddec", function(raddec) { /* Handle the raddec */ });
 
 // 2: Add the specific listener with relevant options
 barnowl.addListener(BarnowlReel, {}, BarnowlReel.SerialListener, { path: "auto" });
 ```
+
+### Example: built-in BLE radio of a Raspberry Pi
+
+```javascript
+const Barnowl = require('barnowl');
+const BarnowlHci = require('barnowl-hci'); // 1: Include the interface package
+
+let barnowl = new Barnowl();
+
+barnowl.on("raddec", function(raddec) { /* Handle the raddec */ });
+
+// 2: Add the specific listener with relevant options
+barnowl.addListener(BarnowlHci, {}, BarnowlHci.SocketListener, {});
+```
+
+### Example: WiFi radio on computer with tcpdump installed
+
+```javascript
+const Barnowl = require('barnowl');
+const BarnowlTcpdump = require('barnowl-tcpdump'); // 1: Include the package
+
+let barnowl = new Barnowl();
+
+barnowl.on("raddec", function(raddec) { /* Handle the raddec */ });
+
+// 2: Add the specific listener with relevant options
+barnowl.addListener(BarnowlTcpdump, {}, BarnowlTcpdump.SpawnListener, {});
+```
+
+### Example: reelyActive hardware & tcpdump
+
+__barnowl__ supports multiple simultaneous listeners and will mix decodings of the same transmission from different sources provided that the _enableMixing_ feature is enabled.  For instance, the reelyActive Owl-in-One combines a BLE and WiFi source.
+
+```javascript
+const Barnowl = require('barnowl');
+const BarnowlReel = require('barnowl-reel');       // 1: Include each of the
+const BarnowlTcpdump = require('barnowl-tcpdump'); //    interface packages
+
+let barnowl = new Barnowl({ enableMixing: true });
+
+barnowl.on("raddec", function(raddec) { /* Handle the raddec */ });
+
+let uart = ...; // In this case the uart is an emitter of 'data' events
+
+// 2: Add the specifics listener with relevant options
+barnowl.addListener(BarnowlReel, {}, BarnowlReel.EventListener, { path: uart });
+barnowl.addListener(BarnowlTcpdump, {}, BarnowlTcpdump.SpawnListener, {});
+```
+
+
+Options
+-------
+
+__barnowl__ supports the following options:
+
+| Property                   | Default | Description                         | 
+|----------------------------|---------|-------------------------------------|
+| enableMixing               | false   | Mix together decodings from the same transmitter  |
+| mixingDelayMilliseconds    | 1000    | Maximum time for any decoding to spend in the mixing queue |
+| minMixingDelayMilliseconds | 5       | Minimum time to delay between subsequent queue managements |
+| encodeRaddecs              | false   | Output raddecs as hex strings rather than as JSON |
+
+In most use cases, _enableMixing_ should be set to _true_ except under extreme memory constraints and/or when absolutely no processing delay can be tolerated.  Mixing decodings into a single [raddec](https://github.com/reelyactive/raddec/) provides lossless compression and promotes efficient data distribution and processing.
 
 
 ![barnowl logo](https://reelyactive.github.io/barnowl/images/barnowl-bubble.png)
