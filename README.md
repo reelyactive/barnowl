@@ -77,7 +77,7 @@ Where to listen?
 __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) while all other listeners exist as separate software packages to keep the code as lightweight and modular as possible.  The following table lists all these listener packages which integrate seamlessly with __barnowl__ in just two lines of code.
 
 | Listener package                                                  | Use with |
-|-------------------------------------------------------------------|----------|
+|:------------------------------------------------------------------|:---------|
 | [barnowl-reel](https://github.com/reelyactive/barnowl-reel)       | reelyActive hardware (BLE, sub-GHz active RFID) |
 | [barnowl-hci](https://github.com/reelyactive/barnowl-hci)         | BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
 | [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
@@ -137,7 +137,7 @@ let barnowl = new Barnowl({ enableMixing: true });
 
 barnowl.on("raddec", function(raddec) { /* Handle the raddec */ });
 
-let uart = ...; // In this case the uart is an emitter of 'data' events
+let uart = /* */; // In this case the uart is an emitter of 'data' events
 
 // 2: Add the specifics listener with relevant options
 barnowl.addListener(BarnowlReel, {}, BarnowlReel.EventListener, { path: uart });
@@ -151,13 +151,17 @@ Options
 __barnowl__ supports the following options:
 
 | Property                   | Default | Description                         | 
-|----------------------------|---------|-------------------------------------|
+|:---------------------------|:--------|:------------------------------------|
 | enableMixing               | false   | Mix together decodings from the same transmitter  |
 | mixingDelayMilliseconds    | 1000    | Maximum time for any decoding to spend in the mixing queue |
 | minMixingDelayMilliseconds | 5       | Minimum time to delay between subsequent queue managements |
 | encodeRaddecs              | false   | Output raddecs as hex strings rather than as JSON |
 
 In most use cases, _enableMixing_ should be set to _true_ except under extreme memory constraints and/or when absolutely no processing delay can be tolerated.  Mixing decodings into a single [raddec](https://github.com/reelyactive/raddec/) provides lossless compression and promotes efficient data distribution and processing.
+
+```javascript
+let barnowl = new Barnowl({ enableMixing: true }); // Recommended
+```
 
 
 ![barnowl logo](https://reelyactive.github.io/barnowl/images/barnowl-bubble.png)
