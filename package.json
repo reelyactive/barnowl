@@ -1,9 +1,9 @@
 {
   "name": "barnowl",
-  "homepage": "http://reelyactive.com",
+  "homepage": "https://www.reelyactive.com",
   "author": {
     "name": "reelyActive",
-    "email": "webdev@reelyactive.com"
+    "email": "info@reelyactive.com"
   },
   "description": "Middleware for low-power wireless radio infrastructure.  We believe in an open Internet of Things.",
   "keywords": [
@@ -16,29 +16,19 @@
     "middleware",
     "M2M"
   ],
-  "version": "0.4.28",
+  "version": "1.0.0",
   "engines": {
-    "node": ">=0.10.x"
+    "node": ">=6.0.0"
   },
   "main": "./lib/barnowl.js",
-  "bin": {
-    "barnowl": "./bin/barnowl"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/reelyactive/barnowl.git"
   },
   "dependencies": {
-    "reelib": ">=0.0.5",
-    "advlib": ">=0.0.30"
+    "raddec": ">=0.2.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.4.3",
-    "grunt-mocha-test": "~0.2.2",
-    "should": "~1.2.2",
-    "node-inspector": "~0.2.0beta4",
-    "grunt-exec": "~0.4.0"
   },
   "contributors": [
     { "name": "Jeffrey Dungen" },
