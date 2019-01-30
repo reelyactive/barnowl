@@ -181,7 +181,9 @@ Can a few hundred lines of server-side Javascript known as barnowl really live u
 What's next?
 ------------
 
-The reelyActive team is currently overhauling barnowl for a v1.0.0 release.  This is very much an active work in progress.  If you're developing with barnowl check out:
+__barnowl__ v1.0.0 was released in January 2019, superseding all earlier versions, the latest of which remains available in the [release-0.4 branch](https://github.com/reelyactive/barnowl/tree/release-0.4) and as [barnowl@0.4.28 on npm](https://www.npmjs.com/package/barnowl/v/0.4.28).
+
+If you're developing with barnowl check out:
 * [diyActive](https://reelyactive.github.io/) our developer page
 * our [node-style-guide](https://github.com/reelyactive/node-style-guide) for development
 * our [contact information](https://www.reelyactive.com/contact/) to get in touch if you'd like to contribute
