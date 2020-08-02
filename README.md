@@ -14,7 +14,7 @@ __barnowl__ outputs a real-time stream of [raddec](https://github.com/reelyactiv
 - RTLS: _where_ is it relative to the receiving devices?
 - M2M: _how_ is its status, based on any payload included in the packet?
 
-__barnowl__ is a lightweight [Node.js package](https://www.npmjs.com/package/barnowl) that can run on resource-constrained edge devices as well as on powerful cloud servers and anything in between.  It is the keystone in the [reelyActive technology platform](https://www.reelyactive.com/technology/), which includes a wealth of complementary software and hardware.
+__barnowl__ is a lightweight [Node.js package](https://www.npmjs.com/package/barnowl) that can run on resource-constrained edge devices as well as on powerful cloud servers and anything in between.  It is the keystone in [Pareto Anywhere](https://getpareto.com) open source software of the [reelyActive technology platform](https://www.reelyactive.com/technology/).
 
 
 Installation
@@ -81,6 +81,8 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) whi
 |:------------------------------------------------------------------|:---------|
 | [barnowl-reel](https://github.com/reelyactive/barnowl-reel)       | reelyActive hardware (BLE, sub-GHz active RFID) |
 | [barnowl-hci](https://github.com/reelyactive/barnowl-hci)         | BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
+| [barnowl-minew](https://github.com/reelyactive/barnowl-minew)     | Minew gateways (ex: G1) |
+| [barnowl-laird](https://github.com/reelyactive/barnowl-laird)     | Laird Connectivity gateways (ex: IG60-BL654) |
 | [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
 
 ### Example: reelyActive hardware connected via serial port
@@ -194,7 +196,7 @@ License
 
 MIT License
 
-Copyright (c) 2014-2019 [reelyActive](https://www.reelyactive.com)
+Copyright (c) 2014-2020 [reelyActive](https://www.reelyactive.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
