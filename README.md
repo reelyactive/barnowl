@@ -83,6 +83,7 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) whi
 | [barnowl-hci](https://github.com/reelyactive/barnowl-hci)         | BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
 | [barnowl-minew](https://github.com/reelyactive/barnowl-minew)     | Minew gateways (ex: G1) |
 | [barnowl-laird](https://github.com/reelyactive/barnowl-laird)     | Laird Connectivity gateways (ex: IG60-BL654) |
+| [barnowl-aruba](https://github.com/reelyactive/barnowl-aruba)     | Aruba access points (ex: 303H) |
 | [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
 
 ### Example: reelyActive hardware connected via serial port
