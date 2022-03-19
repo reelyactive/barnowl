@@ -71,6 +71,8 @@ While __barnowl__ may suffice standalone for simple real-time applications, its 
 - [advlib](https://github.com/reelyactive/advlib) to decode the individual packets from hexadecimal strings into JSON
 - [barnacles](https://github.com/reelyactive/barnacles) to distribute the real-time data stream via APIs and more
 
+These packages and more are bundled together as the [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere) open source middleware suite, which includes several __barnowl__ listeners, as described next.
+
 
 Where to listen?
 ----------------
@@ -84,6 +86,7 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) whi
 | [barnowl-minew](https://github.com/reelyactive/barnowl-minew)     | Minew gateways (ex: G1) |
 | [barnowl-laird](https://github.com/reelyactive/barnowl-laird)     | Laird Connectivity gateways (ex: IG60-BL654) |
 | [barnowl-aruba](https://github.com/reelyactive/barnowl-aruba)     | Aruba access points (ex: 303H) |
+| [barnowl-huawei](https://github.com/reelyactive/barnowl-huawei)   | Huawei access points |
 | [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
 
 ### Example: reelyActive hardware connected via serial port
@@ -181,15 +184,26 @@ Don't think we can top that?  Well check out this quote: "the barn owl is the mo
 Can a few hundred lines of server-side Javascript known as barnowl really live up to that?  Owl we know is it can tyto do its nest!
 
 
-What's next?
-------------
+Project History
+---------------
+
+__barnowl__ is [reelyActive](https://www.reelyactive.com)'s original open source package, which, when initially released in 2014, decoded wireless packets specifically from [reelceivers](https://www.reelyactive.com/products/gateways/#reelceiver).  As third-party hardware became available, and technologies such as Bluetooth Low Energy emerged as global standards, __barnowl__ evolved into the vendor-and-technology-agnostic middleware it is today. 
 
 __barnowl__ v1.0.0 was released in January 2019, superseding all earlier versions, the latest of which remains available in the [release-0.4 branch](https://github.com/reelyactive/barnowl/tree/release-0.4) and as [barnowl@0.4.28 on npm](https://www.npmjs.com/package/barnowl/v/0.4.28).
 
-If you're developing with barnowl check out:
-* [diyActive](https://reelyactive.github.io/) our developer page
-* our [node-style-guide](https://github.com/reelyactive/node-style-guide) for development
-* our [contact information](https://www.reelyactive.com/contact/) to get in touch if you'd like to contribute
+
+Contributing
+------------
+
+Discover [how to contribute](CONTRIBUTING.md) to this open source project which upholds a standard [code of conduct](CODE_OF_CONDUCT.md).
+
+
+Security
+--------
+
+Consult our [security policy](SECURITY.md) for best practices using this open source software and to report vulnerabilities.
+
+[![Known Vulnerabilities](https://snyk.io/test/github/reelyactive/barnowl/badge.svg)](https://snyk.io/test/github/reelyactive/barnowl)
 
 
 License
@@ -197,7 +211,7 @@ License
 
 MIT License
 
-Copyright (c) 2014-2021 [reelyActive](https://www.reelyactive.com)
+Copyright (c) 2014-2022 [reelyActive](https://www.reelyactive.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
