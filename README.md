@@ -187,7 +187,7 @@ Can a few hundred lines of server-side Javascript known as barnowl really live u
 Project History
 ---------------
 
-__barnowl__ is [reelyActive](https://www.reelyactive.com)'s original open source package, which, when initially released in 2014, decoded wireless packets specifically from [reelceivers](https://www.reelyactive.com/products/gateways/#reelceiver).  As third-party hardware evolved to open up, and technologies such as Bluetooth Low Energy emerged as global standards, __barnowl__ evolved into the vendor-and-technology-agnostic middleware it is today. 
+__barnowl__ is [reelyActive](https://www.reelyactive.com)'s original open source package, which, when initially released in 2014, decoded wireless packets specifically from [reelceivers](https://www.reelyactive.com/products/gateways/#reelceiver).  As third-party hardware became available, and technologies such as Bluetooth Low Energy emerged as global standards, __barnowl__ evolved into the vendor-and-technology-agnostic middleware it is today. 
 
 __barnowl__ v1.0.0 was released in January 2019, superseding all earlier versions, the latest of which remains available in the [release-0.4 branch](https://github.com/reelyactive/barnowl/tree/release-0.4) and as [barnowl@0.4.28 on npm](https://www.npmjs.com/package/barnowl/v/0.4.28).
 
