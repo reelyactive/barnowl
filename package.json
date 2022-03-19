@@ -5,7 +5,7 @@
     "name": "reelyActive",
     "email": "info@reelyactive.com"
   },
-  "description": "Middleware for low-power wireless radio infrastructure.  We believe in an open Internet of Things.",
+  "description": "Technology-agnostic middleware for RFID, RTLS and M2M, enabling location-aware physical spaces.  We believe in an open Internet of Things.",
   "keywords": [
     "reelyActive",
     "Bluetooth Low Energy",
@@ -16,7 +16,7 @@
     "middleware",
     "M2M"
   ],
-  "version": "1.1.1",
+  "version": "1.1.2",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -26,7 +26,7 @@
     "url": "https://github.com/reelyactive/barnowl.git"
   },
   "dependencies": {
-    "raddec": ">=0.2.5"
+    "raddec": ">=0.2.8"
   },
   "devDependencies": {
   },
