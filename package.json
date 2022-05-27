@@ -16,11 +16,14 @@
     "middleware",
     "M2M"
   ],
-  "version": "1.1.2",
+  "version": "1.2.0",
   "engines": {
     "node": ">=6.0.0"
   },
   "main": "./lib/barnowl.js",
+  "scripts": {
+    "start": "node bin/barnowl"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/reelyactive/barnowl.git"
