@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const Barnowl = require('../lib/barnowl.js');
+
+let barnowl = new Barnowl();
+
+barnowl.on('raddec', (raddec) => { console.log(raddec); });
+
+barnowl.addListener(Barnowl, {}, Barnowl.UdpListener, {});
