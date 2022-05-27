@@ -77,7 +77,7 @@ These packages and more are bundled together as the [Pareto Anywhere](https://ww
 Where to listen?
 ----------------
 
-__barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) while all other listeners exist as separate software packages to keep the code as lightweight and modular as possible.  The following table lists all these listener packages which integrate seamlessly with __barnowl__ in just two lines of code.
+__barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) and a UdpListener (see the first example below) while all other listeners exist as separate software packages to keep the code as lightweight and modular as possible.  The following table lists all these listener packages which integrate seamlessly with __barnowl__ in just two lines of code.
 
 | Listener package                                                  | Use with |
 |:------------------------------------------------------------------|:---------|
@@ -88,6 +88,19 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) whi
 | [barnowl-aruba](https://github.com/reelyactive/barnowl-aruba)     | Aruba access points (ex: 303H) |
 | [barnowl-huawei](https://github.com/reelyactive/barnowl-huawei)   | Huawei access points |
 | [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
+
+### Example: UDP raddecs
+
+```javascript
+const Barnowl = require('barnowl');
+
+let barnowl = new Barnowl();
+
+barnowl.on("raddec", function(raddec) { /* Handle the raddec */ });
+
+// Add the included UDP listener with relevant options
+barnowl.addListener(Barnowl, {}, Barnowl.UdpListener, { path: "0.0.0.0:50001" });
+```
 
 ### Example: reelyActive hardware connected via serial port
 
