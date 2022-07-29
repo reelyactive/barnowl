@@ -178,6 +178,7 @@ __barnowl__ supports the following options:
 | mixingDelayMilliseconds    | 1000    | Maximum time for any decoding to spend in the mixing queue |
 | minMixingDelayMilliseconds | 5       | Minimum time to delay between subsequent queue managements |
 | encodeRaddecs              | false   | Output raddecs as hex strings rather than as JSON |
+| acceptFutureRaddecs        | true    | raddecs with future timestamps are adjusted to current time and accepted, else rejected |
 
 In most use cases, _enableMixing_ should be set to _true_ except under extreme memory constraints and/or when absolutely no processing delay can be tolerated.  Mixing decodings into a single [raddec](https://github.com/reelyactive/raddec/) provides lossless compression and promotes efficient data distribution and processing.
 
