@@ -16,7 +16,7 @@
     "middleware",
     "M2M"
   ],
-  "version": "1.2.2",
+  "version": "1.2.3",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -29,7 +29,7 @@
     "url": "https://github.com/reelyactive/barnowl.git"
   },
   "dependencies": {
-    "raddec": ">=0.4.1"
+    "raddec": ">=0.4.2"
   },
   "devDependencies": {
   },
