@@ -5,7 +5,7 @@ barnowl
 Technology-agnostic middleware for RFID, RTLS and M2M
 -----------------------------------------------------
 
-__barnowl__ converts RF decodings into software-developer-friendly JSON.  It abstracts away all the complexity of radio protocols (ex: BLE, RFID, WiFi, ...) and vendor-specific infrastructure to provide developers with a simple, standardised data structure to build software applications.
+__barnowl__ converts RF decodings into software-developer-friendly JSON.  It abstracts away all the complexity of radio protocols (ex: BLE, RAIN RFID, EnOcean, ...) and vendor-specific infrastructure to provide developers with a simple, standardised data structure to build software applications.
 
 ![barnowl overview](https://reelyactive.github.io/barnowl/images/barnowl-overview.png)
 
@@ -14,7 +14,7 @@ __barnowl__ outputs a real-time stream of [raddec](https://github.com/reelyactiv
 - RTLS: _where_ is it relative to the receiving devices?
 - M2M: _how_ is its status, based on any payload included in the packet?
 
-__barnowl__ is a lightweight [Node.js package](https://www.npmjs.com/package/barnowl) that can run on resource-constrained edge devices as well as on powerful cloud servers and anything in between.  It is the keystone in [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) open source software of the [reelyActive technology platform](https://www.reelyactive.com/technology/).
+__barnowl__ is a lightweight [Node.js package](https://www.npmjs.com/package/barnowl) that can run on resource-constrained edge devices as well as on powerful cloud servers and anything in between.  It is the keystone in [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) open source middleware of the [reelyActive technology platform](https://www.reelyactive.com/technology/).
 
 
 Installation
@@ -81,7 +81,7 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) and
 
 | Listener package                                                  | Use with |
 |:------------------------------------------------------------------|:---------|
-| [barnowl-reel](https://github.com/reelyactive/barnowl-reel)       | reelyActive hardware (BLE, sub-GHz active RFID) |
+| [barnowl-reel](https://github.com/reelyactive/barnowl-reel)       | [reelyActive hardware](https://www.reelyactive.com/technology/reel/) (BLE, sub-GHz active RFID) |
 | [barnowl-hci](https://github.com/reelyactive/barnowl-hci)         | BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
 | [barnowl-minew](https://github.com/reelyactive/barnowl-minew)     | Minew gateways (ex: G1) |
 | [barnowl-laird](https://github.com/reelyactive/barnowl-laird)     | Laird Connectivity gateways (ex: IG60-BL654) |
@@ -89,6 +89,7 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) and
 | [barnowl-huawei](https://github.com/reelyactive/barnowl-huawei)   | Huawei access points |
 | [barnowl-impinj](https://github.com/reelyactive/barnowl-impinj)   | Impinj RFID readers |
 | [barnowl-rfcontrols](https://github.com/reelyactive/barnowl-rfcontrols) | RF Controls RFC OS |
+| [barnowl-enocean](https://github.com/reelyactive/barnowl-enocean) | EnOcean (ex: USB dongle) |
 | [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
 
 ### Example: UDP raddecs
