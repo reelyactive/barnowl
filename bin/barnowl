@@ -4,6 +4,6 @@ const Barnowl = require('../lib/barnowl.js');
 
 let barnowl = new Barnowl();
 
-barnowl.on('raddec', (raddec) => { console.log(raddec); });
+barnowl.on('raddec', (raddec) => { console.log(raddec.toFlattened()); });
 
 barnowl.addListener(Barnowl, {}, Barnowl.UdpListener, {});
