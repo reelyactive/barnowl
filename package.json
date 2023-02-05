@@ -5,18 +5,16 @@
     "name": "reelyActive",
     "email": "info@reelyactive.com"
   },
-  "description": "Technology-agnostic middleware for RFID, RTLS and M2M, enabling location-aware physical spaces.  We believe in an open Internet of Things.",
+  "description": "Universal converter of ambient RF decodings into standard JSON that is vendor/technology/application-agnostic.  We believe in an open Internet of Things.",
   "keywords": [
     "reelyActive",
-    "Bluetooth Low Energy",
-    "BLE",
     "RFID",
     "IoT",
     "RTLS",
     "middleware",
-    "M2M"
+    "raddec"
   ],
-  "version": "1.2.3",
+  "version": "1.3.0",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -29,7 +27,7 @@
     "url": "https://github.com/reelyactive/barnowl.git"
   },
   "dependencies": {
-    "raddec": ">=0.4.2"
+    "raddec": ">=0.4.3"
   },
   "devDependencies": {
   },
