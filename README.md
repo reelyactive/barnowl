@@ -25,7 +25,7 @@ Clone this repository, install package dependencies with `npm install`, and then
 
     npm start
 
-__barnowl__ will listen for UDP raddec packets on localhost:50001 and output (flattened) __raddec__ JSON to the console.
+__barnowl__ will listen for UDP raddec packets on 0.0.0.0:50001 and output (flattened) __raddec__ JSON to the console.
 
 
 Hello barnowl!
@@ -81,12 +81,12 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) and
 
 | Listener package                                                  | Use with |
 |:------------------------------------------------------------------|:---------|
+| [barnowl-minew](https://github.com/reelyactive/barnowl-minew)     | Minew gateways (ex: G1, G2, MG3, MG4) |
+| [barnowl-aruba](https://github.com/reelyactive/barnowl-aruba)     | [Aruba Networks access points](https://www.reelyactive.com/pareto/anywhere/infrastructure/aruba/) |
+| [barnowl-huawei](https://github.com/reelyactive/barnowl-huawei)   | Huawei access points |
 | [barnowl-reel](https://github.com/reelyactive/barnowl-reel)       | [reelyActive hardware](https://www.reelyactive.com/technology/reel/) (BLE, sub-GHz active RFID) |
 | [barnowl-hci](https://github.com/reelyactive/barnowl-hci)         | BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
-| [barnowl-minew](https://github.com/reelyactive/barnowl-minew)     | Minew gateways (ex: G1) |
 | [barnowl-laird](https://github.com/reelyactive/barnowl-laird)     | Laird Connectivity gateways (ex: IG60-BL654) |
-| [barnowl-aruba](https://github.com/reelyactive/barnowl-aruba)     | Aruba access points (ex: 303H) |
-| [barnowl-huawei](https://github.com/reelyactive/barnowl-huawei)   | Huawei access points |
 | [barnowl-impinj](https://github.com/reelyactive/barnowl-impinj)   | Impinj RFID readers |
 | [barnowl-rfcontrols](https://github.com/reelyactive/barnowl-rfcontrols) | RF Controls RFC OS |
 | [barnowl-enocean](https://github.com/reelyactive/barnowl-enocean) | EnOcean (ex: USB dongle) |
@@ -176,7 +176,7 @@ While __barnowl__ may suffice standalone for simple real-time applications, its 
 - [barnacles](https://github.com/reelyactive/barnacles) to distribute the real-time data stream via APIs and more
 - [chimps](https://github.com/reelyactive/chimps) to process the spatial-temporal dynamics data stream
 
-These packages and more are bundled together as the [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere) open source middleware suite, which includes a variety of __barnowl-x__ listeners, APIs and interactive web apps.
+These packages and more are bundled together as the [Pareto Anywhere](https://github.com/reelyactive/pareto-anywhere) open source middleware suite, which includes a variety of __barnowl-x__ listeners, APIs and interactive web apps.
 
 
 Options
