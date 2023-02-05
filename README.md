@@ -1,77 +1,77 @@
 barnowl
 =======
 
+__barnowl__ converts ambient RF decodings into standard developer-friendly JSON that is vendor/technology/application-agnostic.
 
-Technology-agnostic middleware for RFID, RTLS and M2M
------------------------------------------------------
+![Overview of barnowl](https://reelyactive.github.io/barnowl/images/overview.png)
 
-__barnowl__ converts RF decodings into software-developer-friendly JSON.  It abstracts away all the complexity of radio protocols (ex: BLE, RAIN RFID, EnOcean, ...) and vendor-specific infrastructure to provide developers with a simple, standardised data structure to build software applications.
-
-![barnowl overview](https://reelyactive.github.io/barnowl/images/barnowl-overview.png)
-
-__barnowl__ outputs a real-time stream of [raddec](https://github.com/reelyactive/raddec/) objects which facilitate any and all of the following applications:
-- RFID: _what_ is present, based on the device identifier?
-- RTLS: _where_ is it relative to the receiving devices?
-- M2M: _how_ is its status, based on any payload included in the packet?
-
-__barnowl__ is a lightweight [Node.js package](https://www.npmjs.com/package/barnowl) that can run on resource-constrained edge devices as well as on powerful cloud servers and anything in between.  It is the keystone in [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) open source middleware of the [reelyActive technology platform](https://www.reelyactive.com/technology/).
+__barnowl__ is a lightweight [Node.js package](https://www.npmjs.com/package/barnowl) that can run on resource-constrained edge devices as well as on powerful cloud servers and anything in between.  It is included in reelyActive's [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) open source middleware suite where it consolidates the real-time data from several [barnowl-x modules](#where-to-listen), each of which interfaces with specific radio infrastructure, such as gateways, APs and readers.
 
 
-Installation
-------------
+Getting Started
+---------------
 
-    npm install barnowl
+Follow our step-by-step tutorials to get started with __barnowl-x__ or __Pareto Anywhere__ using _specific_ infrastucture:
+- [Ambient Infrastructure tutorials](https://reelyactive.github.io/diy/devices/#infrastructure)
 
+Learn "owl" about the __raddec__ JSON data output:
+-  [reelyActive Developer's Cheatsheet](https://reelyactive.github.io/diy/cheatsheet/)
+
+
+Quick Start
+-----------
+
+Clone this repository, install package dependencies with `npm install`, and then from the root folder run at any time:
+
+    npm start
+
+__barnowl__ will listen for UDP raddec packets on localhost:50001 and output (flattened) __raddec__ JSON to the console.
 
 
 Hello barnowl!
 --------------
 
-Even without any hardware, it's easy to get started.  The following code will listen to _simulated_ hardware and output packets to the console:
+Developing an application directly from __barnowl__?  Start by pasting the code below into a file called server.js:
 
 ```javascript
 const Barnowl = require('barnowl');
 
-let barnowl = new Barnowl();
-
-barnowl.on("raddec", function(raddec) {
-  console.log(raddec);
-});
+let barnowl = new Barnowl({ enableMixing: true });
 
 barnowl.addListener(Barnowl, {}, Barnowl.TestListener, {});
+
+barnowl.on('raddec', (raddec) => {
+  console.log(raddec);
+  // Trigger your application logic here
+});
 ```
 
-As output you should see a stream of [raddec](https://github.com/reelyactive/raddec/) objects similar to the following:
+From the same folder as the server.js file, install package dependencies with the command `npm install barnowl`.  Then run the code with the command `node server.js` and observe the _simulated_ data stream of radio decodings (raddec objects) output to the console:
 
 ```javascript
 {
   transmitterId: "001122334455",
   transmitterIdType: 2,
-  rssiSignature:
-   [ { receiverId: "001bc50940810000",
-       receiverIdType: 1,
-       numberOfDecodings: 1,
-       rssi: -60 },
-     { receiverId: "001bc50940810001",
-       receiverIdType: 1,
-       numberOfDecodings: 1,
-       rssi: -66 } ],
-  packets: [ "061b55443322110002010611074449555520657669746341796c656572" ],
-  timestamp: 1547693457133
+  rssiSignature: [
+    {
+      receiverId: "001bc50940810000",
+      receiverIdType: 1,
+      rssi: -61,
+      numberOfDecodings: 2
+    },
+    {
+      receiverId: "001bc50940810001",
+      receiverIdType: 1,
+      rssi: -63,
+      numberOfDecodings: 2
+    }
+  ],
+  packets: [ '061b55443322110002010611074449555520657669746341796c656572' ],
+  timestamp: 1645568542222
 }
 ```
 
-Regardless of the underlying RF protocol and hardware, the [raddec](https://github.com/reelyactive/raddec/) specifies _what_ (transmitterId) is _where_ (receiverId & rssi), as well as _how_ (packets) and _when_ (timestamp).
-
-
-Is that owl you can do?
------------------------
-
-While __barnowl__ may suffice standalone for simple real-time applications, its functionality can be greatly extended with the following software packages:
-- [advlib](https://github.com/reelyactive/advlib) to decode the individual packets from hexadecimal strings into JSON
-- [barnacles](https://github.com/reelyactive/barnacles) to distribute the real-time data stream via APIs and more
-
-These packages and more are bundled together as the [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere) open source middleware suite, which includes several __barnowl__ listeners, as described next.
+See [Where to listen?](#where-to-listen) below to adapt the code to listen for your gateways, APs and/or readers.
 
 
 Where to listen?
@@ -97,9 +97,9 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) and
 ```javascript
 const Barnowl = require('barnowl');
 
-let barnowl = new Barnowl();
+let barnowl = new Barnowl({ enableMixing: true });
 
-barnowl.on("raddec", function(raddec) { /* Handle the raddec */ });
+barnowl.on("raddec", (raddec) => { /* Handle the raddec */ });
 
 // Add the included UDP listener with relevant options
 barnowl.addListener(Barnowl, {}, Barnowl.UdpListener, { path: "0.0.0.0:50001" });
@@ -111,9 +111,9 @@ barnowl.addListener(Barnowl, {}, Barnowl.UdpListener, { path: "0.0.0.0:50001" })
 const Barnowl = require('barnowl');
 const BarnowlReel = require('barnowl-reel'); // 1: Include the interface package
 
-let barnowl = new Barnowl();
+let barnowl = new Barnowl({ enableMixing: true });
 
-barnowl.on("raddec", function(raddec) { /* Handle the raddec */ });
+barnowl.on("raddec", (raddec) => { /* Handle the raddec */ });
 
 // 2: Add the specific listener with relevant options
 barnowl.addListener(BarnowlReel, {}, BarnowlReel.SerialListener, { path: "auto" });
@@ -125,9 +125,9 @@ barnowl.addListener(BarnowlReel, {}, BarnowlReel.SerialListener, { path: "auto" 
 const Barnowl = require('barnowl');
 const BarnowlHci = require('barnowl-hci'); // 1: Include the interface package
 
-let barnowl = new Barnowl();
+let barnowl = new Barnowl({ enableMixing: true });
 
-barnowl.on("raddec", function(raddec) { /* Handle the raddec */ });
+barnowl.on("raddec", (raddec) => { /* Handle the raddec */ });
 
 // 2: Add the specific listener with relevant options
 barnowl.addListener(BarnowlHci, {}, BarnowlHci.SocketListener, {});
@@ -139,9 +139,9 @@ barnowl.addListener(BarnowlHci, {}, BarnowlHci.SocketListener, {});
 const Barnowl = require('barnowl');
 const BarnowlTcpdump = require('barnowl-tcpdump'); // 1: Include the package
 
-let barnowl = new Barnowl();
+let barnowl = new Barnowl({ enableMixing: true });
 
-barnowl.on("raddec", function(raddec) { /* Handle the raddec */ });
+barnowl.on("raddec", (raddec) => { /* Handle the raddec */ });
 
 // 2: Add the specific listener with relevant options
 barnowl.addListener(BarnowlTcpdump, {}, BarnowlTcpdump.SpawnListener, {});
@@ -158,7 +158,7 @@ const BarnowlTcpdump = require('barnowl-tcpdump'); //    interface packages
 
 let barnowl = new Barnowl({ enableMixing: true });
 
-barnowl.on("raddec", function(raddec) { /* Handle the raddec */ });
+barnowl.on("raddec", (raddec) => { /* Handle the raddec */ });
 
 let uart = /* */; // In this case the uart is an emitter of 'data' events
 
@@ -166,6 +166,17 @@ let uart = /* */; // In this case the uart is an emitter of 'data' events
 barnowl.addListener(BarnowlReel, {}, BarnowlReel.EventListener, { path: uart });
 barnowl.addListener(BarnowlTcpdump, {}, BarnowlTcpdump.SpawnListener, {});
 ```
+
+
+Is that owl you can do?
+-----------------------
+
+While __barnowl__ may suffice standalone for simple real-time applications, its functionality can be greatly extended with the following software packages:
+- [advlib](https://github.com/reelyactive/advlib) to decode the individual packets from hexadecimal strings into JSON
+- [barnacles](https://github.com/reelyactive/barnacles) to distribute the real-time data stream via APIs and more
+- [chimps](https://github.com/reelyactive/chimps) to process the spatial-temporal dynamics data stream
+
+These packages and more are bundled together as the [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere) open source middleware suite, which includes a variety of __barnowl-x__ listeners, APIs and interactive web apps.
 
 
 Options
