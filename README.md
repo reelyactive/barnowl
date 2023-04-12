@@ -82,13 +82,14 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) and
 | Listener package                                                  | Use with |
 |:------------------------------------------------------------------|:---------|
 | [barnowl-minew](https://github.com/reelyactive/barnowl-minew)     | Minew gateways (ex: G1, G2, MG3, MG4) |
-| [barnowl-aruba](https://github.com/reelyactive/barnowl-aruba)     | [Aruba Networks access points](https://www.reelyactive.com/pareto/anywhere/infrastructure/aruba/) |
+| [barnowl-aruba](https://github.com/reelyactive/barnowl-aruba)     | [HPE Aruba Networking access points](https://www.reelyactive.com/pareto/anywhere/infrastructure/aruba/) |
 | [barnowl-huawei](https://github.com/reelyactive/barnowl-huawei)   | Huawei access points |
 | [barnowl-reel](https://github.com/reelyactive/barnowl-reel)       | [reelyActive hardware](https://www.reelyactive.com/technology/reel/) (BLE, sub-GHz active RFID) |
 | [barnowl-hci](https://github.com/reelyactive/barnowl-hci)         | BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
 | [barnowl-laird](https://github.com/reelyactive/barnowl-laird)     | Laird Connectivity gateways (ex: IG60-BL654) |
 | [barnowl-impinj](https://github.com/reelyactive/barnowl-impinj)   | Impinj RFID readers |
 | [barnowl-rfcontrols](https://github.com/reelyactive/barnowl-rfcontrols) | RF Controls RFC OS |
+| [barnowl-llrp](https://github.com/reelyactive/barnowl-llrp)       | Low-Level Reader Protocol (LLRP) |
 | [barnowl-enocean](https://github.com/reelyactive/barnowl-enocean) | EnOcean (ex: USB dongle) |
 | [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
 
