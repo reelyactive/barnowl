@@ -89,6 +89,7 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) and
 | [barnowl-laird](https://github.com/reelyactive/barnowl-laird)     | Laird Connectivity gateways (ex: IG60-BL654) |
 | [barnowl-impinj](https://github.com/reelyactive/barnowl-impinj)   | Impinj RFID readers |
 | [barnowl-rfcontrols](https://github.com/reelyactive/barnowl-rfcontrols) | RF Controls RFC OS |
+| [barnowl-llrp](https://github.com/reelyactive/barnowl-llrp)       | Low-Level Reader Protocol (LLRP) |
 | [barnowl-enocean](https://github.com/reelyactive/barnowl-enocean) | EnOcean (ex: USB dongle) |
 | [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
 
