@@ -14,7 +14,7 @@
     "middleware",
     "raddec"
   ],
-  "version": "1.3.2",
+  "version": "1.3.3",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -27,7 +27,7 @@
     "url": "https://github.com/reelyactive/barnowl.git"
   },
   "dependencies": {
-    "raddec": ">=0.5.0"
+    "raddec": ">=0.6.0"
   },
   "devDependencies": {
   },
