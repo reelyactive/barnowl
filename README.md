@@ -81,7 +81,7 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) and
 
 | Listener package                                                  | Use with |
 |:------------------------------------------------------------------|:---------|
-| [barnowl-minew](https://github.com/reelyactive/barnowl-minew)     | Minew gateways (ex: G1, G2, MG3, MG4) |
+| [barnowl-minew](https://github.com/reelyactive/barnowl-minew)     | [Minew gateways](https://www.reelyactive.com/pareto/anywhere/infrastructure/minew/) (ex: G1, G2, MG3, MG4) |
 | [barnowl-aruba](https://github.com/reelyactive/barnowl-aruba)     | [HPE Aruba Networking access points](https://www.reelyactive.com/pareto/anywhere/infrastructure/aruba/) |
 | [barnowl-cisco](https://github.com/reelyactive/barnowl-cisco)     | Cisco access points |
 | [barnowl-huawei](https://github.com/reelyactive/barnowl-huawei)   | Huawei access points |
@@ -90,8 +90,8 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) and
 | [barnowl-noble](https://github.com/reelyactive/barnowl-noble)     | BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
 | [barnowl-cassia](https://github.com/reelyactive/barnowl-cassia)   | Cassia Networks gateways |
 | [barnowl-laird](https://github.com/reelyactive/barnowl-laird)     | Laird Connectivity gateways (ex: IG60-BL654) |
-| [barnowl-impinj](https://github.com/reelyactive/barnowl-impinj)   | Impinj RFID readers |
-| [barnowl-rfcontrols](https://github.com/reelyactive/barnowl-rfcontrols) | RF Controls RFC OS |
+| [barnowl-impinj](https://github.com/reelyactive/barnowl-impinj)   | [Impinj RFID readers](https://www.reelyactive.com/pareto/anywhere/infrastructure/impinj/) |
+| [barnowl-rfcontrols](https://github.com/reelyactive/barnowl-rfcontrols) | [RF Controls RFC OS](https://www.reelyactive.com/pareto/anywhere/infrastructure/rfcontrols/) |
 | [barnowl-zebra](https://github.com/reelyactive/barnowl-zebra)     | Zebra RFID readers |
 | [barnowl-csl](https://github.com/reelyactive/barnowl-csl)         | CSL RFID readers |
 | [barnowl-chafon](https://github.com/reelyactive/barnowl-chafon)   | Chafon RFID readers |
