@@ -81,20 +81,27 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) and
 
 | Listener package                                                  | Use with |
 |:------------------------------------------------------------------|:---------|
-| [barnowl-minew](https://github.com/reelyactive/barnowl-minew)     | Minew gateways (ex: G1, G2, MG3, MG4) |
+| [barnowl-minew](https://github.com/reelyactive/barnowl-minew)     | [Minew gateways](https://www.reelyactive.com/pareto/anywhere/infrastructure/minew/) (ex: G1, G2, MG3, MG4) |
 | [barnowl-aruba](https://github.com/reelyactive/barnowl-aruba)     | [HPE Aruba Networking access points](https://www.reelyactive.com/pareto/anywhere/infrastructure/aruba/) |
+| [barnowl-cisco](https://github.com/reelyactive/barnowl-cisco)     | Cisco access points |
 | [barnowl-huawei](https://github.com/reelyactive/barnowl-huawei)   | Huawei access points |
 | [barnowl-reel](https://github.com/reelyactive/barnowl-reel)       | [reelyActive hardware](https://www.reelyactive.com/technology/reel/) (BLE, sub-GHz active RFID) |
 | [barnowl-hci](https://github.com/reelyactive/barnowl-hci)         | BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
+| [barnowl-noble](https://github.com/reelyactive/barnowl-noble)     | BLE radios on Linux computers (ex: Raspberry Pi, PC, ...) |
+| [barnowl-cassia](https://github.com/reelyactive/barnowl-cassia)   | Cassia Networks gateways |
 | [barnowl-laird](https://github.com/reelyactive/barnowl-laird)     | Laird Connectivity gateways (ex: IG60-BL654) |
-| [barnowl-impinj](https://github.com/reelyactive/barnowl-impinj)   | Impinj RFID readers |
-| [barnowl-rfcontrols](https://github.com/reelyactive/barnowl-rfcontrols) | RF Controls RFC OS |
+| [barnowl-impinj](https://github.com/reelyactive/barnowl-impinj)   | [Impinj RFID readers](https://www.reelyactive.com/pareto/anywhere/infrastructure/impinj/) |
+| [barnowl-rfcontrols](https://github.com/reelyactive/barnowl-rfcontrols) | [RF Controls RFC OS](https://www.reelyactive.com/pareto/anywhere/infrastructure/rfcontrols/) |
+| [barnowl-zebra](https://github.com/reelyactive/barnowl-zebra)     | Zebra RFID readers |
 | [barnowl-csl](https://github.com/reelyactive/barnowl-csl)         | CSL RFID readers |
 | [barnowl-chafon](https://github.com/reelyactive/barnowl-chafon)   | Chafon RFID readers |
 | [barnowl-llrp](https://github.com/reelyactive/barnowl-llrp)       | Low-Level Reader Protocol (LLRP) |
 | [barnowl-enocean](https://github.com/reelyactive/barnowl-enocean) | EnOcean (ex: USB dongle) |
+| [barnowl-simatic](https://github.com/reelyactive/barnowl-simatic) | Siemens SIMATIC RTLS Locating Manager |
+| [barnowl-bgapi](https://github.com/reelyactive/barnowl-bgapi)     | Silicon Labs devices using BGAPI |
 | [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
 | [barnowl-axis](https://github.com/reelyactive/barnowl-axis)       | AXIS Communications IP cameras |
+| [barnowl-mqtt](https://github.com/reelyactive/barnowl-mqtt)       | MQTT broker |
 
 ### Example: UDP raddecs
 
@@ -252,7 +259,7 @@ License
 
 MIT License
 
-Copyright (c) 2014-2024 [reelyActive](https://www.reelyactive.com)
+Copyright (c) 2014-2026 [reelyActive](https://www.reelyactive.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
