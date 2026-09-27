@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 
-const Barnowl = require('../lib/barnowl.js');
+import Barnowl, { TestListener, UdpListener } from "../lib/barnowl.js";
 
-let barnowl = new Barnowl();
+const barnowl = new Barnowl({ enableMixing: true });
 
-barnowl.on('raddec', (raddec) => { console.log(raddec.toFlattened()); });
+barnowl.addEventListener("raddec", (event) => {
+  const raddec = event.detail;
+  console.log(raddec.toFlattened());
+});
 
-barnowl.addListener(Barnowl, {}, Barnowl.UdpListener, {});
+barnowl.addListener(Barnowl, {}, UdpListener, {});
+barnowl.addListener(Barnowl, {}, TestListener, {});
+
+setInterval(() => { console.log(barnowl.getMetrics()); }, 5000);

@@ -16,8 +16,9 @@
   ],
   "version": "1.3.4",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=18.0.0"
   },
+  "type": "module",
   "main": "./lib/barnowl.js",
   "scripts": {
     "start": "node bin/barnowl"
