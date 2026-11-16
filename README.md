@@ -101,6 +101,7 @@ __barnowl__ includes a TestListener (see the _Hello barnowl!_ example above) and
 | [barnowl-bgapi](https://github.com/reelyactive/barnowl-bgapi)     | Silicon Labs devices using BGAPI |
 | [barnowl-tcpdump](https://github.com/reelyactive/barnowl-tcpdump) | WiFi radios on computers that can run tcpdump |
 | [barnowl-axis](https://github.com/reelyactive/barnowl-axis)       | AXIS Communications IP cameras |
+| [barnowl-vda5050](https://github.com/reelyactive/barnowl-vda5050) | VDA5050-compatible mobile robots |
 | [barnowl-mqtt](https://github.com/reelyactive/barnowl-mqtt)       | MQTT broker |
 
 ### Example: UDP raddecs
